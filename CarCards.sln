@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarCards.Android", "CarCards.Android\CarCards.Android.csproj", "{1616689F-2FC0-4DEB-BE6A-C3A9FDEE4ACD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarCards", "CarCards\CarCards.csproj", "{BA2D8954-D8E3-4BBE-A4A8-183F30E45219}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1616689F-2FC0-4DEB-BE6A-C3A9FDEE4ACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1616689F-2FC0-4DEB-BE6A-C3A9FDEE4ACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1616689F-2FC0-4DEB-BE6A-C3A9FDEE4ACD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1616689F-2FC0-4DEB-BE6A-C3A9FDEE4ACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1616689F-2FC0-4DEB-BE6A-C3A9FDEE4ACD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1616689F-2FC0-4DEB-BE6A-C3A9FDEE4ACD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BA2D8954-D8E3-4BBE-A4A8-183F30E45219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA2D8954-D8E3-4BBE-A4A8-183F30E45219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA2D8954-D8E3-4BBE-A4A8-183F30E45219}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BA2D8954-D8E3-4BBE-A4A8-183F30E45219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA2D8954-D8E3-4BBE-A4A8-183F30E45219}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA2D8954-D8E3-4BBE-A4A8-183F30E45219}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92704072-58A3-444D-BB66-45B31CBA6E77}
+	EndGlobalSection
+EndGlobal

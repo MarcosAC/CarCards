@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CarCards.Views.PaginaPrincipal">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Car Cards" 
+               TextColor="Black" 
+               FontSize="Large" />
+
+            <ImageButton BackgroundColor="Transparent"
+                         WidthRequest="30"
+                         HeightRequest="30"
+                         Source="camera"
+                         Margin="0,0,15,0"
+                         HorizontalOptions="EndAndExpand" />
+
+            <ImageButton BackgroundColor="Transparent"
+                         WidthRequest="30"
+                         HeightRequest="30"
+                         Source="novo"
+                         Margin="0,0,15,0"
+                         HorizontalOptions="End" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <CarouselView ItemsSource="{Binding Carros}" ItemsLayout="HorizontalList">
+            <CarouselView.ItemTemplate SnapPointsAlignment="Center" SnapPointsType="Mandatory">
+                <DataTemplate>
+                    <StackLayout Padding="0" BackgroundColor="#F2F2F2">
+
+                        <Image Source="OpalaBranco.jpg" />
+
+                        <!--Especificações-->
+                        <Frame Style="{StaticResource styleFramePrincipal}">
+
+                            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <!--Frame Ano-->
+                                <Frame Style="{StaticResource styleFrameEspecificacoes}"
+                                       BorderColor="#31708F"
+                                       BackgroundColor="#D9EDF7">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <StackLayout>
+                                            <Image Style="{StaticResource styleImageEspecificoes}" Source="ano" />
+
+                                            <Label Style="{StaticResource styleLabelTextoIcone}"
+                                                   Text="Ano"
+                                                   TextColor="#31708F" />
+                                        </StackLayout>
+
+                                        <Frame Style="{StaticResource styleFrameDadosCarro}">
+                                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                                   Grid.Row="1" 
+                                                   Text="1979"
+                                                   TextColor="#31708F" />
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+
+                                <!--Frame Velocidade-->
+                                <Frame Style="{StaticResource styleFrameEspecificacoes}"
+                                       Grid.Column="1"
+                                       BackgroundColor="#F2DEDE"
+                                       BorderColor="#A94442">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <StackLayout>
+                                            <Image Style="{StaticResource styleImageEspecificoes}" Source="velocidade" />
+
+                                            <Label Style="{StaticResource styleLabelTextoIcone}"
+                                                   Text="Km/h"
+                                                   TextColor="#A94442" />
+                                        </StackLayout>
+
+                                        <Frame Style="{StaticResource styleFrameDadosCarro}">
+                                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                                   Grid.Row="1"
+                                                   Text="174"
+                                                   TextColor="#A94442" />
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+
+                                <!--Frame Acelereção-->
+                                <Frame Style="{StaticResource styleFrameEspecificacoes}"
+                                       Grid.Column="2"
+                                       BackgroundColor="#FBECEB"
+                                       BorderColor="#D43F3A">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <StackLayout>
+                                            <Image Style="{StaticResource styleImageEspecificoes}" Source="aceleracao" />
+
+                                            <Label Style="{StaticResource styleLabelTextoIcone}"
+                                                   Text="0 à 100"
+                                                   TextColor="#D43F3A" />
+                                        </StackLayout>
+
+                                        <Frame Style="{StaticResource styleFrameDadosCarro}">
+                                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                                   Grid.Row="1"
+                                                   Text="14 seg."
+                                                   TextColor="#D43F3A" />
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+
+                                <!--Frame Potencia--> 
+                                <Frame Style="{StaticResource styleFrameEspecificacoes}"
+                                       Grid.Row="1"
+                                       BackgroundColor="#FCF8E3"
+                                       BorderColor="#EEA236">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <StackLayout>
+                                            <Image Style="{StaticResource styleImageEspecificoes}" Source="potencia" />
+
+                                            <Label Style="{StaticResource styleLabelTextoIcone}"
+                                                   Text="Potência"
+                                                   TextColor="#EEA236" />
+                                        </StackLayout>
+
+                                        <Frame Style="{StaticResource styleFrameDadosCarro}">
+                                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                                   Grid.Row="1"
+                                                   Text="98 cv"
+                                                   TextColor="#EEA236" />
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+
+                                <!--Frame Cilindradas--> 
+                                <Frame Style="{StaticResource styleFrameEspecificacoes}"
+                                       Grid.Row="1" 
+                                       Grid.Column="1"
+                                       BackgroundColor="#e2dff6"
+                                       BorderColor="#6959cd">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <StackLayout>
+                                            <Image Style="{StaticResource styleImageEspecificoes}" Source="pistao" />
+
+                                            <Label Style="{StaticResource styleLabelTextoIcone}"
+                                                   Text="CC"
+                                                   TextColor="#6959cd" />
+                                        </StackLayout>
+
+                                        <Frame Style="{StaticResource styleFrameDadosCarro}">
+                                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                                   Grid.Row="1"
+                                                   Text="1999 CC"
+                                                   TextColor="#6959cd" />
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+
+                                <!--Frame Motor--> 
+                                <Frame Style="{StaticResource styleFrameEspecificacoes}"
+                                       Grid.Column="2"
+                                       Grid.Row="1"
+                                       BackgroundColor="#f8d5fe"
+                                       BorderColor="#9805f6">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <StackLayout>
+                                            <Image Style="{StaticResource styleImageEspecificoes}" Source="engrenagens" />
+
+                                            <Label Style="{StaticResource styleLabelTextoIcone}"
+                                                   Text="Motor"
+                                                   TextColor="#9805f6" />
+                                        </StackLayout>
+
+                                        <Frame Style="{StaticResource styleFrameDadosCarro}">
+                                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                                   Grid.Row="1"
+                                                   Text="6 Cilind."
+                                                   TextColor="#9805f6" />
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+
+                        <!--Nome do Carro-->
+                        <Frame Style="{StaticResource styleFrameNomeCarro}">
+
+                            <StackLayout Orientation="Horizontal">
+                                <Image Style="{StaticResource styleImageEspecificoes}" Source="chevrolet" />
+
+                                <Label Text="{Binding Nome}"
+                                       FontSize="Medium"
+                                       TextColor="White"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+    </ContentPage.Content>
+</ContentPage>
