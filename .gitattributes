@@ -1,0 +1,3 @@
+* text=auto
+*.java linguist-language=csharp
+*.htm linguist-language=csharp
