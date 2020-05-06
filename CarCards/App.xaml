@@ -62,6 +62,18 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
+
+            <Style TargetType="Label" x:Key="styleBaseLabelTitleView">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style TargetType="ImageButton" x:Key="styleButtonTitleView">
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="Margin" Value="0,0,15,0" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

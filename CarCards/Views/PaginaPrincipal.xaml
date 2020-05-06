@@ -8,22 +8,14 @@
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
-            <Label Text="Car Cards" 
-               TextColor="Black" 
-               FontSize="Large" />
+            <Label Style="{StaticResource styleBaseLabelTitleView}" Text="Car Cards" />
 
-            <ImageButton BackgroundColor="Transparent"
-                         WidthRequest="30"
-                         HeightRequest="30"
-                         Source="camera"
-                         Margin="0,0,15,0"
+            <ImageButton Style="{StaticResource styleButtonTitleView}"
+                         Source="camerapreta"
                          HorizontalOptions="EndAndExpand" />
 
-            <ImageButton BackgroundColor="Transparent"
-                         WidthRequest="30"
-                         HeightRequest="30"
-                         Source="novo"
-                         Margin="0,0,15,0"
+            <ImageButton Style="{StaticResource styleButtonTitleView}"
+                         Source="novopreto"
                          HorizontalOptions="End" />
         </StackLayout>
     </NavigationPage.TitleView>
