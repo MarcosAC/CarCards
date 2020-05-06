@@ -57,7 +57,8 @@
                                         <StackLayout>
                                             <Image Style="{StaticResource styleImageEspecificoes}" Source="ano" />
 
-                                            <Label Style="{StaticResource styleLabelTextoIcone}"
+                                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                                   FontAttributes="Bold"
                                                    Text="Ano"
                                                    TextColor="#31708F" />
                                         </StackLayout>
@@ -86,7 +87,7 @@
                                         <StackLayout>
                                             <Image Style="{StaticResource styleImageEspecificoes}" Source="velocidade" />
 
-                                            <Label Style="{StaticResource styleLabelTextoIcone}"
+                                            <Label Style="{StaticResource styleLabelEspecificacoes}"
                                                    Text="Km/h"
                                                    TextColor="#A94442" />
                                         </StackLayout>
@@ -115,7 +116,8 @@
                                         <StackLayout>
                                             <Image Style="{StaticResource styleImageEspecificoes}" Source="aceleracao" />
 
-                                            <Label Style="{StaticResource styleLabelTextoIcone}"
+                                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                                   FontAttributes="Bold"
                                                    Text="0 à 100"
                                                    TextColor="#D43F3A" />
                                         </StackLayout>
@@ -144,7 +146,8 @@
                                         <StackLayout>
                                             <Image Style="{StaticResource styleImageEspecificoes}" Source="potencia" />
 
-                                            <Label Style="{StaticResource styleLabelTextoIcone}"
+                                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                                   FontAttributes="Bold"
                                                    Text="Potência"
                                                    TextColor="#EEA236" />
                                         </StackLayout>
@@ -174,7 +177,7 @@
                                         <StackLayout>
                                             <Image Style="{StaticResource styleImageEspecificoes}" Source="pistao" />
 
-                                            <Label Style="{StaticResource styleLabelTextoIcone}"
+                                            <Label Style="{StaticResource styleLabelEspecificacoes}"
                                                    Text="CC"
                                                    TextColor="#6959cd" />
                                         </StackLayout>
@@ -204,7 +207,7 @@
                                         <StackLayout>
                                             <Image Style="{StaticResource styleImageEspecificoes}" Source="engrenagens" />
 
-                                            <Label Style="{StaticResource styleLabelTextoIcone}"
+                                            <Label Style="{StaticResource styleLabelEspecificacoes}"
                                                    Text="Motor"
                                                    TextColor="#9805f6" />
                                         </StackLayout>
@@ -226,12 +229,7 @@
                             <StackLayout Orientation="Horizontal">
                                 <Image Style="{StaticResource styleImageEspecificoes}" Source="chevrolet" />
 
-                                <Label Text="{Binding Nome}"
-                                       FontSize="Medium"
-                                       TextColor="White"
-                                       FontAttributes="Bold"
-                                       HorizontalOptions="CenterAndExpand"
-                                       VerticalOptions="CenterAndExpand" />
+                                <Label Text="{Binding Nome}" Style="{StaticResource styleLabelNomeCarro}" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>

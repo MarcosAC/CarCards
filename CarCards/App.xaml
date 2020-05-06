@@ -47,18 +47,9 @@
                 <Setter Property="HeightRequest" Value="30" />
             </Style>
 
-            <Style TargetType="Label" x:Key="styleBaseLabelEspecificacoes">
+            <Style TargetType="Label" x:Key="styleLabelEspecificacoes">
                 <Setter Property="FontSize" Value="Subtitle" />
                 <Setter Property="FontAttributes" Value="Bold" />
-            </Style>
-
-            <Style TargetType="Label" x:Key="styleLabelEspecificacoes" BasedOn="{StaticResource styleBaseLabelEspecificacoes}">
-                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-                <Setter Property="FontAttributes" Value="None" />
-            </Style>
-
-            <Style TargetType="Label" x:Key="styleLabelTextoIcone"  BasedOn="{StaticResource styleBaseLabelEspecificacoes}">
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
@@ -67,6 +58,11 @@
                 <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="styleLabelNomeCarro" BasedOn="{StaticResource styleLabelEspecificacoes}">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Medium" />
             </Style>
 
             <Style TargetType="ImageButton" x:Key="styleButtonTitleView">
