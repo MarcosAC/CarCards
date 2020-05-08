@@ -1,6 +1,4 @@
-﻿using CarCards.Models;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -17,13 +15,6 @@ namespace CarCards.ViewModels
             set => SetProperty(ref _isBusy, value);
         }
 
-        private bool _tabBarIsVisible;
-        public bool TabBarIsVisible
-        {
-            get => _tabBarIsVisible;
-            set => SetProperty(ref _tabBarIsVisible, value);
-        }
-
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
@@ -34,54 +25,6 @@ namespace CarCards.ViewModels
 
             storege = value;
             OnPropertyChanged(propertyName);
-        }
-
-        public ObservableCollection<Carro> Carros { get; }
-
-        public BaseViewModel()
-        {
-            Carros = new ObservableCollection<Carro>
-            {
-                new Carro
-                {
-                    Nome = "Opala Comodoro",
-                    Ano = "1979",
-                    //Cor = "Branco",
-                    Velocidade = "165,4 km/h",
-                },
-
-                new Carro
-                {
-                    Nome = "Opala Comodoro",
-                    Ano = "1979",
-                   // Cor = "Branco",
-                    Velocidade = "165,4 km/h",
-                },
-
-                new Carro
-                {
-                    Nome = "Opala Comodoro",
-                    Ano = "1979",
-                    //Cor = "Branco",
-                    Velocidade = "165,4 km/h",
-                },
-
-                new Carro
-                {
-                    Nome = "Opala Comodoro",
-                    Ano = "1979",
-                    //Cor = "Branco",
-                    Velocidade = "165,4 km/h",
-                },
-
-                new Carro
-                {
-                    Nome = "Opala Comodoro",
-                    Ano = "1979",
-                    //Cor = "Branco",
-                    Velocidade = "165,4 km/h",
-                }
-            };
-        }
+        }        
     }
 }

@@ -4,17 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CarCards.Views.PaginaPrincipal">
+             x:Class="CarCards.Views.PaginaPrincipalView">
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
             <Label Style="{StaticResource styleBaseLabelTitleView}" Text="Car Cards" />
 
             <ImageButton Style="{StaticResource styleButtonTitleView}"
-                         x:Name="takePhoto"
                          Source="camerapreta"
                          HorizontalOptions="EndAndExpand" 
-                         Clicked="TirarFoto"/>
+                         Command="{Binding TirarFotoCommand}" />
 
             <ImageButton Style="{StaticResource styleButtonTitleView}"
                          Source="novopreto"
