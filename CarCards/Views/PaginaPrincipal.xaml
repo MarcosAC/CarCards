@@ -11,8 +11,10 @@
             <Label Style="{StaticResource styleBaseLabelTitleView}" Text="Car Cards" />
 
             <ImageButton Style="{StaticResource styleButtonTitleView}"
+                         x:Name="takePhoto"
                          Source="camerapreta"
-                         HorizontalOptions="EndAndExpand" />
+                         HorizontalOptions="EndAndExpand" 
+                         Clicked="TirarFoto"/>
 
             <ImageButton Style="{StaticResource styleButtonTitleView}"
                          Source="novopreto"
