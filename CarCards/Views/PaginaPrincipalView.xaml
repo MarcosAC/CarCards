@@ -65,8 +65,7 @@
                                         </StackLayout>
 
                                         <Frame Style="{StaticResource styleFrameDadosCarro}">
-                                            <Label Style="{StaticResource styleLabelEspecificacoes}"
-                                                   Grid.Row="1" 
+                                            <Label Style="{StaticResource styleLabelEspecificacoes}"                                                    
                                                    Text="1979"
                                                    TextColor="#31708F" />
                                         </Frame>
@@ -213,7 +212,7 @@
                                                    TextColor="#9805f6" />
                                         </StackLayout>
 
-                                        <Frame Style="{StaticResource styleFrameDadosCarro}">
+                                        <Frame Style="{StaticResource styleFrameEntry}">
                                             <Label Style="{StaticResource styleLabelEspecificacoes}"
                                                    Grid.Row="1"
                                                    Text="6 Cilind."

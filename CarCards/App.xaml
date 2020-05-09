@@ -23,6 +23,21 @@
                 <Setter Property="HeightRequest" Value="100" />
             </Style>
 
+            <Style TargetType="Frame" x:Key="styleBaseFrameEntry">
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Margin" Value="10,0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HeightRequest" Value="120" />
+                <Setter Property="WidthRequest" Value="100" />
+            </Style>
+
+            <Style TargetType="Frame" x:Key="styleFrameEntry">
+                <!--<Setter Property="Grid.Column" Value="1" />-->
+                <Setter Property="Grid.Row" Value="1" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Padding" Value="0" />
+            </Style>
+
             <Style TargetType="Frame" x:Key="styleFrameDadosCarro">
                 <Setter Property="Grid.Row" Value="1" />
                 <Setter Property="CornerRadius" Value="7" />
@@ -40,6 +55,12 @@
                 <Setter Property="Padding" Value="10" />
                 <Setter Property="WidthRequest" Value="200" />
                 <Setter Property="BackgroundColor" Value="#337ab7" />
+            </Style>
+
+            <Style TargetType="Frame" x:Key="styleFrameBackGroundEntry">
+                <Setter Property="CornerRadius" Value="40" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TranslationY" Value="210" />
             </Style>
 
             <Style TargetType="Image" x:Key="styleImageEspecificoes">
@@ -69,6 +90,43 @@
                 <Setter Property="WidthRequest" Value="30" />
                 <Setter Property="HeightRequest" Value="30" />
                 <Setter Property="Margin" Value="0,0,15,0" />
+            </Style>
+
+            <Style TargetType="ImageButton" x:Key="styleButtonCamera">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <Style TargetType="Button" x:Key="styleBaseButton">                
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="BorderWidth" Value="1" />
+            </Style>
+
+            <Style TargetType="Button" x:Key="styleButtonSalvar" BasedOn="{StaticResource styleBaseButton}">
+                <Setter Property="TextColor" Value="Green" />
+                <Setter Property="BackgroundColor" Value="#EAFAF1" />
+                <Setter Property="BorderColor" Value="Green" />
+            </Style>
+
+            <Style TargetType="Button" x:Key="styleButtonCancelar" BasedOn="{StaticResource styleBaseButton}">
+                <Setter Property="TextColor" Value="Red" />
+                <Setter Property="BackgroundColor" Value="#F2DEDE" />
+                <Setter Property="BorderColor" Value="Red" />
+            </Style>
+
+            <Style TargetType="Grid" x:Key="styleGridEntry">
+                <Setter Property="Padding" Value="5" />
+            </Style>
+
+            <Style TargetType="Entry" x:Key="styleEntry">
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style TargetType="StackLayout" x:Key="styleStackLayoutCamera">
+                <Setter Property="BackgroundColor" Value="AliceBlue" />
+                <Setter Property="HeightRequest" Value="250" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

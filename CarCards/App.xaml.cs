@@ -11,7 +11,7 @@ namespace CarCards
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new PaginaPrincipalView())
+            MainPage = new NavigationPage(new AdicionarCardView())
             {
                 BarBackgroundColor = Color.White
             };
