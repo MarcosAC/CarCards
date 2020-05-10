@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CarCards.Views.AdicionarCardView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Style="{StaticResource styleStackLayoutCamera}">
+                <ImageButton Style="{StaticResource styleButtonCamera}"
+                             x:Name="TirarFoto"  
+                             Source="camera1"
+                             Clicked="TirarFoto_Click" />
+                
+                <Image x:Name="Imagem" Style="{StaticResource styleImage}"/>
+            </StackLayout>
+
+            <Frame Style="{StaticResource styleFrameBackGroundEntry}" />
+
+            <Grid Grid.Row="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+
+                <!--Campo Ano-->
+                <Frame Style="{StaticResource styleBaseFrameEntry}"
+                       BorderColor="#31708F"
+                       BackgroundColor="#D9EDF7">
+
+                    <Grid Style="{StaticResource styleGridEntry}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackLayout>
+                            <Image Style="{StaticResource styleImageEspecificoes}" Source="ano" />
+
+                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                   FontAttributes="Bold"
+                                   Text="Ano"
+                                   TextColor="#31708F" />
+                        </StackLayout>
+
+                        <Frame Style="{StaticResource styleFrameEntry}">
+                            <Entry Style="{StaticResource styleEntry}" TextColor="#31708F" />
+                        </Frame>
+                    </Grid>
+                </Frame>
+
+                <!--Campo Velocidade-->
+                <Frame Grid.Column="1"
+                       Style="{StaticResource styleBaseFrameEntry}" 
+                       BackgroundColor="#F2DEDE"
+                       BorderColor="#A94442">
+
+                    <Grid Style="{StaticResource styleGridEntry}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackLayout>
+                            <Image Style="{StaticResource styleImageEspecificoes}" Source="velocidade" />
+
+                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                   Text="Km/h"
+                                   TextColor="#A94442" />
+                        </StackLayout>
+
+                        <Frame Style="{StaticResource styleFrameEntry}">
+                            <Entry Style="{StaticResource styleEntry}" TextColor="#A94442" />
+                        </Frame>
+                    </Grid>
+                </Frame>
+
+                <!--Aceleração-->
+                <Frame Grid.Column="2"
+                       Style="{StaticResource styleBaseFrameEntry}"
+                       BackgroundColor="#FBECEB"
+                       BorderColor="#D43F3A">
+
+                    <Grid Style="{StaticResource styleGridEntry}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackLayout>
+                            <Image Style="{StaticResource styleImageEspecificoes}" Source="aceleracao" />
+
+                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                   FontAttributes="Bold"
+                                   Text="0 à 100"
+                                   TextColor="#D43F3A" />
+                        </StackLayout>
+
+                        <Frame Style="{StaticResource styleFrameEntry}">
+                            <Entry Style="{StaticResource styleEntry}" TextColor="#D43F3A" />
+                        </Frame>
+                    </Grid>
+                </Frame>
+
+                <!--Campo Potência-->
+                <Frame Grid.Row="1"
+                       Grid.Column="0"
+                       Style="{StaticResource styleBaseFrameEntry}"
+                       BackgroundColor="#FCF8E3"
+                       BorderColor="#EEA236">
+
+                    <Grid Style="{StaticResource styleGridEntry}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackLayout>
+                            <Image Style="{StaticResource styleImageEspecificoes}" Source="potencia" />
+
+                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                   Text="Potência"
+                                   TextColor="#EEA236" />
+                        </StackLayout>
+
+                        <Frame Style="{StaticResource styleFrameEntry}">
+                            <Entry Style="{StaticResource styleEntry}" TextColor="#EEA236" />
+                        </Frame>
+                    </Grid>
+                </Frame>
+
+                <!--Campo Cilindradas-->
+                <Frame Grid.Row="1"
+                       Grid.Column="1"
+                       Style="{StaticResource styleBaseFrameEntry}"
+                       BackgroundColor="#e2dff6"
+                       BorderColor="#6959cd">
+
+                    <Grid Style="{StaticResource styleGridEntry}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackLayout>
+                            <Image Style="{StaticResource styleImageEspecificoes}" Source="pistao" />
+
+                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                   Text="CC"
+                                   TextColor="#6959cd" />
+                        </StackLayout>
+
+                        <Frame Style="{StaticResource styleFrameEntry}">
+                            <Entry Style="{StaticResource styleEntry}" TextColor="#6959cd" />
+                        </Frame>
+                    </Grid>
+                </Frame>
+
+                <!--Campo Motor-->
+                <Frame Grid.Row="1"
+                       Grid.Column="2"
+                       Style="{StaticResource styleBaseFrameEntry}"
+                       BackgroundColor="#f8d5fe"
+                       BorderColor="#9805f6">
+
+                    <Grid Style="{StaticResource styleGridEntry}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackLayout>
+                            <Image Style="{StaticResource styleImageEspecificoes}" Source="engrenagens" />
+
+                            <Label Style="{StaticResource styleLabelEspecificacoes}"
+                                   Text="Motor"
+                                   TextColor="#9805f6" />
+                        </StackLayout>
+
+                        <Frame Style="{StaticResource styleFrameEntry}">
+                            <Entry Style="{StaticResource styleEntry}" TextColor="#9805f6" />
+                        </Frame>
+                    </Grid>
+                </Frame>
+            </Grid>
+
+            <!--Botões-->
+            <Grid Grid.Row="2" Margin="0,20,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Style="{StaticResource styleButtonSalvar}" Text="Salvar" />
+
+                <Button Style="{StaticResource styleButtonCancelar}"
+                        Grid.Column="1" 
+                        Text="Cancelar" />
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

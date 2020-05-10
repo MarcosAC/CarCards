@@ -68,6 +68,11 @@
                 <Setter Property="HeightRequest" Value="30" />
             </Style>
 
+            <Style TargetType="Image" x:Key="styleImage">
+                <Setter Property="Aspect" Value="AspectFill" />
+                <Setter Property="HeightRequest" Value="250" />
+            </Style>
+
             <Style TargetType="Label" x:Key="styleLabelEspecificacoes">
                 <Setter Property="FontSize" Value="Subtitle" />
                 <Setter Property="FontAttributes" Value="Bold" />
@@ -96,7 +101,7 @@
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                <Setter Property="TranslationY" Value="-25" />
+                <Setter Property="TranslationY" Value="55" />
             </Style>
 
             <Style TargetType="Button" x:Key="styleBaseButton">                
