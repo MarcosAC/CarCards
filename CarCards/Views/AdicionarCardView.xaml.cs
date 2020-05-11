@@ -46,16 +46,22 @@ namespace CarCards.Views
                     DefaultCamera = CameraDevice.Rear
                 });
 
+                CarregarFoto(file);
+            }
+            else
+            {
+                var file = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions
+                {
+                    PhotoSize = PhotoSize.Medium,
+
+                });
+
                 if (file == null)
                     return;
                 else
                     TirarFoto.IsVisible = false;
 
                 CarregarFoto(file);
-            }
-            else
-            {
-                //TO-DO Acessar pasta de imagens do celular
             }
         }
     }
