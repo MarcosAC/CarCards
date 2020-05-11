@@ -1,7 +1,5 @@
 ﻿using Plugin.Media;
 using Plugin.Media.Abstractions;
-using System;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
