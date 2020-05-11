@@ -75,20 +75,21 @@ namespace CarCards.ViewModels
 
         private async Task ExecuteTirarFotoCommand()
         {
-            await App.Current.MainPage.Navigation.PushAsync(new AdicionarCardView());
-            //var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-            //{
-            //    Directory = "CarCardsImg",
-            //    SaveToAlbum = false,
-            //    CompressionQuality = 75,
-            //    CustomPhotoSize = 50,
-            //    PhotoSize = PhotoSize.MaxWidthHeight,
-            //    MaxWidthHeight = 2000,
-            //    DefaultCamera = CameraDevice.Rear
-            //});
+            var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+            {
+                Directory = "CarCardsImg",
+                SaveToAlbum = false,
+                CompressionQuality = 75,
+                CustomPhotoSize = 50,
+                PhotoSize = PhotoSize.MaxWidthHeight,
+                MaxWidthHeight = 2000,
+                DefaultCamera = CameraDevice.Rear
+            });
 
-            //if (file == null)
-            //    return;
+            if (file == null)
+                return;
+
+            await App.Current.MainPage.Navigation.PushAsync(new AdicionarCardView(file));
         }
     }
 }

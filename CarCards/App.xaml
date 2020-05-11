@@ -99,8 +99,8 @@
 
             <Style TargetType="ImageButton" x:Key="styleButtonCamera">
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <!--<Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />-->
                 <Setter Property="TranslationY" Value="55" />
             </Style>
 
