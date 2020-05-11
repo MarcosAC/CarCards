@@ -1,6 +1,7 @@
 ﻿using Plugin.Media;
 using Plugin.Media.Abstractions;
 using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -32,29 +33,32 @@ namespace CarCards.Views
 
         private async void TirarFoto_Click(object sender, System.EventArgs e)
         {
-            var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+            if (!await App.Current.MainPage.DisplayAlert("Adicionar Imagem ou Foto",
+                                                         "Deseja adicionar uma imagem do arquivo ou tirar uma foto?",
+                                                         "Adicionar Imagem", "Tirar Foto"))
             {
-                Directory = "CarCardsImg",
-                SaveToAlbum = false,
-                CompressionQuality = 75,
-                CustomPhotoSize = 50,
-                PhotoSize = PhotoSize.MaxWidthHeight,
-                MaxWidthHeight = 2000,
-                DefaultCamera = CameraDevice.Rear
-            });
+                var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                {
+                    Directory = "CarCardsImg",
+                    SaveToAlbum = false,
+                    CompressionQuality = 75,
+                    CustomPhotoSize = 50,
+                    PhotoSize = PhotoSize.MaxWidthHeight,
+                    MaxWidthHeight = 2000,
+                    DefaultCamera = CameraDevice.Rear
+                });
 
-            if (file == null)
-                return;
+                if (file == null)
+                    return;
+                else
+                    TirarFoto.IsVisible = false;
+
+                CarregarFoto(file);
+            }
             else
-                TirarFoto.IsVisible = false;
-
-            CarregarFoto(file);
-
-            //Imagem.Source = ImageSource.FromStream(() =>
-            //{
-            //    var stream = file.GetStream();
-            //    return stream;
-            //});
+            {
+                //TO-DO Acessar pasta de imagens do celular
+            }
         }
     }
 }
