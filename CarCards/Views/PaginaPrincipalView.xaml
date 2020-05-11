@@ -17,7 +17,8 @@
 
             <ImageButton Style="{StaticResource styleButtonTitleView}"
                          Source="novopreto"
-                         HorizontalOptions="End" />
+                         HorizontalOptions="End" 
+                         Command="{Binding IrPaginaAdionarCarro}" />
         </StackLayout>
     </NavigationPage.TitleView>
     

@@ -2,6 +2,7 @@
 using CarCards.Views;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -90,6 +91,15 @@ namespace CarCards.ViewModels
                 return;
 
             await App.Current.MainPage.Navigation.PushAsync(new AdicionarCardView(file));
+        }
+
+        private Command _irPaginaAdionarCarro;
+        public Command IrPaginaAdionarCarro =>
+            _irPaginaAdionarCarro ?? (_irPaginaAdionarCarro = new Command(async () => await ExecuteIrPaginaAdionarCarro()));
+
+        private async Task ExecuteIrPaginaAdionarCarro()
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new AdicionarCardView(null));
         }
     }
 }
