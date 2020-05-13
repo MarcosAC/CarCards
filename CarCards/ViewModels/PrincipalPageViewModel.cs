@@ -2,17 +2,24 @@
 using CarCards.Views;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Prism.Mvvm;
+using Prism.Navigation;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
+
 namespace CarCards.ViewModels
 {
-    public class PaginaPrincipalViewModel: BaseViewModel
+    public class PrincipalPageViewModel: BindableBase
     {
+        public PrincipalPageViewModel(INavigationService navigationService)
+        {
+        }
+
         public ObservableCollection<Carro> Carros { get; }
 
-        public PaginaPrincipalViewModel()
+        public PrincipalPageViewModel()
         {
             Carros = new ObservableCollection<Carro>
             {
@@ -56,18 +63,7 @@ namespace CarCards.ViewModels
                     Velocidade = "165,4 km/h",
                 }
             };
-        }
-
-        private ImageSource _imagem;
-        public ImageSource Imagem
-        {
-            get => _imagem;
-
-            set
-            {
-                SetProperty(ref _imagem, value);
-            }
-        }
+        }        
 
         private Command _tirarFotoCommand;
         public Command TirarFotoCommand =>

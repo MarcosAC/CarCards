@@ -12,14 +12,16 @@
 
   <ItemGroup>
     <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
+    <PackageReference Include="Prism.Core" Version="7.2.0.1422" />
+    <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.1422" />
     <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\PaginaPrincipalView.xaml.cs">
-      <DependentUpon>PaginaPrincipalView.xaml</DependentUpon>
+    <Compile Update="Views\PrincipalPage.xaml.cs">
+      <DependentUpon>PrincipalPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -27,7 +29,7 @@
     <EmbeddedResource Update="Views\AdicionarCardView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PaginaPrincipalView.xaml">
+    <EmbeddedResource Update="Views\PrincipalPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

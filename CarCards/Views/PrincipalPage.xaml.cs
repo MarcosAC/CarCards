@@ -4,13 +4,13 @@ using Xamarin.Forms.Xaml;
 
 namespace CarCards.Views
 {    
-    public partial class PaginaPrincipalView : ContentPage
+    public partial class PrincipalPage : ContentPage
     {
-        public PaginaPrincipalView()
+        public PrincipalPage()
         {
             InitializeComponent();
 
-            BindingContext = new PaginaPrincipalViewModel();            
+            BindingContext = new PrincipalPageViewModel();            
         }
     }
 }

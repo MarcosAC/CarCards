@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="CarCards.App">
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"                         
+                        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                        xmlns:prism="http://prismlibrary.com"
+                        mc:Ignorable="d"
+                        x:Class="CarCards.App">
     <Application.Resources>
         <ResourceDictionary>
+            <Style TargetType="NavigationPage">                
+                <Setter Property="BarBackgroundColor" Value="White" />
+            </Style>
             <Style TargetType="Frame" x:Key="styleFramePrincipal">
                 <Setter Property="CornerRadius" Value="40" />
                 <Setter Property="TranslationY" Value="-45" />
@@ -136,4 +140,4 @@
             </Style>
         </ResourceDictionary>
     </Application.Resources>
-</Application>
+</prism:PrismApplication>
