@@ -20,7 +20,7 @@
             <ImageButton Style="{StaticResource styleButtonTitleView}"
                          Source="novopreto"
                          HorizontalOptions="End" 
-                         Command="{Binding IrPaginaAdionarCarro}" />
+                         Command="{Binding IrAdicionarCardPage}" />
         </StackLayout>
     </NavigationPage.TitleView>
     

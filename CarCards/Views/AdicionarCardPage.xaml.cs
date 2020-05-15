@@ -6,9 +6,9 @@ using Xamarin.Forms.Xaml;
 namespace CarCards.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AdicionarCardView : ContentPage
+    public partial class AdicionarCardPage : ContentPage
     {
-        public AdicionarCardView(MediaFile file = null)
+        public AdicionarCardPage(MediaFile file = null)
         {
             InitializeComponent();
 

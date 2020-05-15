@@ -11,6 +11,7 @@
             <Style TargetType="NavigationPage">                
                 <Setter Property="BarBackgroundColor" Value="White" />
             </Style>
+            
             <Style TargetType="Frame" x:Key="styleFramePrincipal">
                 <Setter Property="CornerRadius" Value="40" />
                 <Setter Property="TranslationY" Value="-45" />

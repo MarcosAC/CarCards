@@ -2,6 +2,7 @@
 using CarCards.Views;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System.Collections.ObjectModel;
@@ -11,16 +12,16 @@ using Xamarin.Forms;
 
 namespace CarCards.ViewModels
 {
-    public class PrincipalPageViewModel: BindableBase
+    public class PrincipalViewModel : BindableBase
     {
-        public PrincipalPageViewModel(INavigationService navigationService)
-        {
-        }
-
+        private readonly INavigationService _navigationService;
+        
         public ObservableCollection<Carro> Carros { get; }
 
-        public PrincipalPageViewModel()
+        public PrincipalViewModel(INavigationService navigationService)
         {
+            _navigationService = navigationService;
+
             Carros = new ObservableCollection<Carro>
             {
                 new Carro
@@ -63,6 +64,7 @@ namespace CarCards.ViewModels
                     Velocidade = "165,4 km/h",
                 }
             };
+
         }        
 
         private Command _tirarFotoCommand;
@@ -85,16 +87,22 @@ namespace CarCards.ViewModels
             if (file == null)
                 return;
 
-            await App.Current.MainPage.Navigation.PushAsync(new AdicionarCardView(file));
+            await App.Current.MainPage.Navigation.PushAsync(new AdicionarCardPage(file));
         }
 
-        private Command _irPaginaAdionarCarro;
-        public Command IrPaginaAdionarCarro =>
-            _irPaginaAdionarCarro ?? (_irPaginaAdionarCarro = new Command(async () => await ExecuteIrPaginaAdionarCarro()));
+        private DelegateCommand _irAdicionarCardPage;
 
-        private async Task ExecuteIrPaginaAdionarCarro()
+        public DelegateCommand IrAdicionarCardPage => 
+            _irAdicionarCardPage ?? (_irAdicionarCardPage = new DelegateCommand(async () => await ExecuteIrAdicionarCardPage()));
+
+        //private Command _irPaginaAdionarCarro;
+        //public Command IrPaginaAdionarCarro =>
+        //    _irPaginaAdionarCarro ?? (_irPaginaAdionarCarro = new Command(async () => await ExecuteIrPaginaAdionarCarro()));
+
+        private async Task ExecuteIrAdicionarCardPage()
         {
-            await App.Current.MainPage.Navigation.PushAsync(new AdicionarCardView(null));
+            //await App.Current.MainPage.Navigation.PushAsync(new AdicionarCardView(null));
+            await _navigationService.NavigateAsync("AdicionarCardPage");
         }
     }
 }

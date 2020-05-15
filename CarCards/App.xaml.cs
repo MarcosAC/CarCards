@@ -23,19 +23,21 @@ namespace CarCards
         {
             InitializeComponent();
 
-            var result = await NavigationService.NavigateAsync("/NavigationPage/PrincipalPage");
+            await NavigationService.NavigateAsync("/NavigationPage/PrincipalPage");
 
-            if (!result.Success)
-            {
-                System.Diagnostics.Debugger.Break();
-            }
+            //var result = await NavigationService.NavigateAsync("/NavigationPage/PrincipalPage");
+
+            //if (!result.Success)
+            //{
+            //    System.Diagnostics.Debugger.Break();
+            //}
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<PrincipalPage, PrincipalPageViewModel>();
-            //containerRegistry.RegisterForNavigation<ViewA, ViewAViewModel>();
+            containerRegistry.RegisterForNavigation<PrincipalPage, PrincipalViewModel>();
+            containerRegistry.RegisterForNavigation<AdicionarCardPage>();
             //containerRegistry.RegisterForNavigation<ViewB, ViewBViewModel>();
             //containerRegistry.RegisterForNavigation<ViewC, ViewCViewModel>();
         }

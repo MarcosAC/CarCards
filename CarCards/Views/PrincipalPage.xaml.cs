@@ -1,16 +1,12 @@
-﻿using CarCards.ViewModels;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace CarCards.Views
-{    
+{
     public partial class PrincipalPage : ContentPage
     {
         public PrincipalPage()
         {
-            InitializeComponent();
-
-            BindingContext = new PrincipalPageViewModel();            
+            InitializeComponent();  
         }
     }
 }
