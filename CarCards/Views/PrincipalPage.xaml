@@ -10,16 +10,10 @@
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
-            <Label Style="{StaticResource styleBaseLabelTitleView}" Text="Car Cards" />
+            <Label Style="{StaticResource styleBaseLabelTitleView}" Text="Car Cards" />           
 
             <ImageButton Style="{StaticResource styleButtonTitleView}"
-                         Source="camerapreta"
-                         HorizontalOptions="EndAndExpand" 
-                         Command="{Binding TirarFotoCommand}" />
-
-            <ImageButton Style="{StaticResource styleButtonTitleView}"
-                         Source="novopreto"
-                         HorizontalOptions="End" 
+                         Source="imgBtnAdicionar"
                          Command="{Binding IrAdicionarCardPage}" />
         </StackLayout>
     </NavigationPage.TitleView>

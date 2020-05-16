@@ -12,25 +12,12 @@ namespace CarCards
     {
         public App()
         {
-            //InitializeComponent();
-
-            //MainPage = new NavigationPage(new PaginaPrincipalView())
-            //{
-            //    BarBackgroundColor = Color.White
-            //};
         }
         protected override async void OnInitialized()
         {
             InitializeComponent();
 
             await NavigationService.NavigateAsync("/NavigationPage/PrincipalPage");
-
-            //var result = await NavigationService.NavigateAsync("/NavigationPage/PrincipalPage");
-
-            //if (!result.Success)
-            //{
-            //    System.Diagnostics.Debugger.Break();
-            //}
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

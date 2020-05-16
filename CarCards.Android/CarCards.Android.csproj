@@ -134,13 +134,7 @@
     <AndroidResource Include="Resources\drawable\camera1.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\novo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\novo1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\novopreto.png" />
+    <AndroidResource Include="Resources\drawable\imgBtnAdicionar.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\camerapreta.png" />

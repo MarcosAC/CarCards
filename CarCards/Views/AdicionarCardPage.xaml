@@ -8,6 +8,7 @@
              mc:Ignorable="d"
              x:Class="CarCards.Views.AdicionarCardPage"
              NavigationPage.HasNavigationBar="False">
+    
     <ContentPage.Content>
         <Grid BackgroundColor="White">
             <Grid.RowDefinitions>
@@ -19,7 +20,8 @@
             <StackLayout Style="{StaticResource styleStackLayoutCamera}">
                 <ImageButton Style="{StaticResource styleButtonCamera}"
                              x:Name="TirarFoto"  
-                             Source="camera1" />
+                             Source="camera1" 
+                             Clicked="TirarFoto_Click"/>
                 
                 <Image x:Name="Imagem" Style="{StaticResource styleImage}"/>
             </StackLayout>

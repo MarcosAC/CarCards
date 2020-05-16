@@ -37,7 +37,6 @@
             </Style>
 
             <Style TargetType="Frame" x:Key="styleFrameEntry">
-                <!--<Setter Property="Grid.Column" Value="1" />-->
                 <Setter Property="Grid.Row" Value="1" />
                 <Setter Property="CornerRadius" Value="10" />
                 <Setter Property="Padding" Value="0" />
@@ -97,6 +96,7 @@
             </Style>
 
             <Style TargetType="ImageButton" x:Key="styleButtonTitleView">
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
                 <Setter Property="WidthRequest" Value="30" />
                 <Setter Property="HeightRequest" Value="30" />
                 <Setter Property="Margin" Value="0,0,15,0" />
@@ -104,8 +104,6 @@
 
             <Style TargetType="ImageButton" x:Key="styleButtonCamera">
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <!--<Setter Property="VerticalOptions" Value="CenterAndExpand" />
-                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />-->
                 <Setter Property="TranslationY" Value="55" />
             </Style>
 
