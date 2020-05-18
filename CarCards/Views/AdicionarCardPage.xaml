@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:control="clr-namespace:CarCards.Controls"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              mc:Ignorable="d"
@@ -45,7 +46,13 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <Picker Margin="10,0">
+                        <control:CustomPicker Margin="10,0"
+                                              Title="Marca"
+                                              TitleColor="White"
+                                              FontSize="Medium"
+                                              FontAttributes="Bold"
+                                              TextColor="White"
+                                              HorizontalOptions="CenterAndExpand">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
                                     <x:String>Ford</x:String>
@@ -54,16 +61,16 @@
                                     <x:String>Volks</x:String>
                                 </x:Array>
                             </Picker.ItemsSource>
-                        </Picker>
+                        </control:CustomPicker>
 
-                        <Entry Style="{StaticResource styleEntry}" 
-                               Margin="10,0"
-                               Grid.Column="1"
-                               Placeholder="Nome Carro"
-                               PlaceholderColor="White"
-                               FontSize="Medium"
-                               FontAttributes="Bold"
-                               TextColor="White" />
+                        <control:CustomEntry Style="{StaticResource styleEntry}" 
+                                             Margin="10,0"
+                                             Grid.Column="1"
+                                             Placeholder="Nome Carro"
+                                             PlaceholderColor="White"
+                                             FontSize="Medium"
+                                             FontAttributes="Bold"
+                                             TextColor="White" />
                     </Grid>
                 </Frame>
             </Grid>
