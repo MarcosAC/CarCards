@@ -10,8 +10,9 @@
              NavigationPage.HasNavigationBar="False">
     
     <ContentPage.Content>
-        <Grid BackgroundColor="White">
+        <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
@@ -28,11 +29,50 @@
 
             <Frame Style="{StaticResource styleFrameBackGroundEntry}" />
 
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" TranslationY="-35">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <Frame CornerRadius="30" BorderColor="#D9D9D9" BackgroundColor="#337ab7" Margin="10,0" Padding="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Picker Margin="10,0">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Ford</x:String>
+                                    <x:String>Chevrolet</x:String>
+                                    <x:String>Fiat</x:String>
+                                    <x:String>Volks</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+
+                        <Entry Style="{StaticResource styleEntry}" 
+                               Margin="10,0"
+                               Grid.Column="1"
+                               Placeholder="Nome Carro"
+                               PlaceholderColor="White"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               TextColor="White" />
+                    </Grid>
+                </Frame>
+            </Grid>
+
+            <Grid Grid.Row="2" TranslationY="-30">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />                        
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
@@ -40,7 +80,7 @@
                         <ColumnDefinition Width="auto" />
                         <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
-                </Grid>
+                </Grid>                
 
                 <!--Campo Ano-->
                 <Frame Style="{StaticResource styleBaseFrameEntry}"
@@ -203,10 +243,10 @@
                 </Frame>
             </Grid>
 
-            <!--Botões-->
-            <Grid Grid.Row="2" Margin="0,20,0,0">
+            <!--Botões-->            
+            <Grid Grid.Row="3" Margin="0,0,0,0" Padding="0" TranslationY="-15">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>

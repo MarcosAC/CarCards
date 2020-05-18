@@ -36,6 +36,14 @@
                 <Setter Property="WidthRequest" Value="100" />
             </Style>
 
+            <Style TargetType="Frame" x:Key="styleFramePicker">
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Margin" Value="10,0" />
+                <!--<Setter Property="Padding" Value="0" />-->
+                <Setter Property="HeightRequest" Value="120" />
+                <Setter Property="WidthRequest" Value="100" />
+            </Style>
+
             <Style TargetType="Frame" x:Key="styleFrameEntry">
                 <Setter Property="Grid.Row" Value="1" />
                 <Setter Property="CornerRadius" Value="10" />
