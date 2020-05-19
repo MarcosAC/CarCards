@@ -98,7 +98,7 @@
                         </StackLayout>
 
                         <Frame Style="{StaticResource styleFrameEntry}">
-                            <Entry Style="{StaticResource styleEntry}" TextColor="#31708F" />
+                            <control:CustomEntry Style="{StaticResource styleEntry}" TextColor="#31708F" />
                         </Frame>
                     </Grid>
                 </Frame>
@@ -124,7 +124,7 @@
                         </StackLayout>
 
                         <Frame Style="{StaticResource styleFrameEntry}">
-                            <Entry Style="{StaticResource styleEntry}" TextColor="#A94442" />
+                            <control:CustomEntry Style="{StaticResource styleEntry}" TextColor="#A94442" />
                         </Frame>
                     </Grid>
                 </Frame>
@@ -151,7 +151,7 @@
                         </StackLayout>
 
                         <Frame Style="{StaticResource styleFrameEntry}">
-                            <Entry Style="{StaticResource styleEntry}" TextColor="#D43F3A" />
+                            <control:CustomEntry Style="{StaticResource styleEntry}" TextColor="#D43F3A" />
                         </Frame>
                     </Grid>
                 </Frame>
@@ -178,7 +178,7 @@
                         </StackLayout>
 
                         <Frame Style="{StaticResource styleFrameEntry}">
-                            <Entry Style="{StaticResource styleEntry}" TextColor="#EEA236" />
+                            <control:CustomEntry Style="{StaticResource styleEntry}" TextColor="#EEA236" />
                         </Frame>
                     </Grid>
                 </Frame>
@@ -205,7 +205,7 @@
                         </StackLayout>
 
                         <Frame Style="{StaticResource styleFrameEntry}">
-                            <Entry Style="{StaticResource styleEntry}" TextColor="#6959cd" />
+                            <control:CustomEntry Style="{StaticResource styleEntry}" TextColor="#6959cd" />
                         </Frame>
                     </Grid>
                 </Frame>
@@ -232,7 +232,7 @@
                         </StackLayout>
 
                         <Frame Style="{StaticResource styleFrameEntry}">
-                            <Entry Style="{StaticResource styleEntry}" TextColor="#9805f6" />
+                            <control:CustomEntry Style="{StaticResource styleEntry}" TextColor="#9805f6" />
                         </Frame>
                     </Grid>
                 </Frame>
