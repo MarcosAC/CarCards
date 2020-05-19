@@ -10,7 +10,7 @@
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
-            <Label Style="{StaticResource styleBaseLabelTitleView}" Text="Car Cards" />           
+            <Label Style="{StaticResource styleLabelTitleView}" Text="Car Cards" />           
 
             <ImageButton Style="{StaticResource styleButtonTitleView}"
                          Source="imgBtnAdicionar"
@@ -209,7 +209,7 @@
                                                    TextColor="#9805f6" />
                                         </StackLayout>
 
-                                        <Frame Style="{StaticResource styleFrameEntry}">
+                                        <Frame Style="{StaticResource styleFrameDadosCarro}">
                                             <Label Style="{StaticResource styleLabelEspecificacoes}"
                                                    Grid.Row="1"
                                                    Text="6 Cilind."
@@ -221,7 +221,7 @@
                         </Frame>
 
                         <!--Nome do Carro-->
-                        <Frame Style="{StaticResource styleFrameNomeCarro}">
+                        <Frame Style="{StaticResource styleFramePrincipalTopo}">
 
                             <StackLayout Orientation="Horizontal">
                                 <Image Style="{StaticResource styleImageEspecificoes}" Source="chevrolet" />

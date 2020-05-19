@@ -8,10 +8,24 @@
                         x:Class="CarCards.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Style TargetType="NavigationPage">                
+            <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="White" />
             </Style>
-            
+
+            <!--Style PrincipalPage-->
+            <Style TargetType="Label" x:Key="styleLabelTitleView">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style TargetType="ImageButton" x:Key="styleButtonTitleView">
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="Margin" Value="0,0,15,0" />
+            </Style>
+
             <Style TargetType="Frame" x:Key="styleFramePrincipal">
                 <Setter Property="CornerRadius" Value="40" />
                 <Setter Property="TranslationY" Value="-45" />
@@ -28,26 +42,16 @@
                 <Setter Property="HeightRequest" Value="100" />
             </Style>
 
-            <Style TargetType="Frame" x:Key="styleBaseFrameEntry">
-                <Setter Property="CornerRadius" Value="10" />
-                <Setter Property="Margin" Value="10,0" />
-                <Setter Property="Padding" Value="0" />
-                <Setter Property="HeightRequest" Value="120" />
-                <Setter Property="WidthRequest" Value="100" />
+            <Style TargetType="Image" x:Key="styleImageEspecificoes">
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="HeightRequest" Value="30" />
             </Style>
 
-            <Style TargetType="Frame" x:Key="styleFramePicker">
-                <Setter Property="CornerRadius" Value="10" />
-                <Setter Property="Margin" Value="10,0" />
-                <!--<Setter Property="Padding" Value="0" />-->
-                <Setter Property="HeightRequest" Value="120" />
-                <Setter Property="WidthRequest" Value="100" />
-            </Style>
-
-            <Style TargetType="Frame" x:Key="styleFrameEntry">
-                <Setter Property="Grid.Row" Value="1" />
-                <Setter Property="CornerRadius" Value="10" />
-                <Setter Property="Padding" Value="0" />
+            <Style TargetType="Label" x:Key="styleLabelEspecificacoes">
+                <Setter Property="FontSize" Value="Subtitle" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
 
             <Style TargetType="Frame" x:Key="styleFrameDadosCarro">
@@ -58,56 +62,30 @@
                 <Setter Property="Padding" Value="0" />
             </Style>
 
-            <Style TargetType="Frame" x:Key="styleFrameNomeCarro">
+            <Style TargetType="Frame" x:Key="styleBaseFramePrincipalTopo">
                 <Setter Property="CornerRadius" Value="25" />
                 <Setter Property="BorderColor" Value="#D9D9D9" />
+                <Setter Property="BackgroundColor" Value="#337ab7" />
+            </Style>
+
+            <Style TargetType="Frame" x:Key="styleFramePrincipalTopo" BasedOn="{StaticResource styleBaseFramePrincipalTopo}">                
                 <Setter Property="HorizontalOptions" Value="End" />
                 <Setter Property="TranslationX" Value="-30" />
                 <Setter Property="TranslationY" Value="-395" />
                 <Setter Property="Padding" Value="10" />
-                <Setter Property="WidthRequest" Value="200" />
-                <Setter Property="BackgroundColor" Value="#337ab7" />
-            </Style>
-
-            <Style TargetType="Frame" x:Key="styleFrameBackGroundEntry">
-                <Setter Property="CornerRadius" Value="40" />
-                <Setter Property="BackgroundColor" Value="White" />
-                <Setter Property="TranslationY" Value="210" />
-            </Style>
-
-            <Style TargetType="Image" x:Key="styleImageEspecificoes">
-                <Setter Property="WidthRequest" Value="30" />
-                <Setter Property="HeightRequest" Value="30" />
-            </Style>
-
-            <Style TargetType="Image" x:Key="styleImage">
-                <Setter Property="Aspect" Value="AspectFill" />
-                <Setter Property="HeightRequest" Value="250" />
-            </Style>
-
-            <Style TargetType="Label" x:Key="styleLabelEspecificacoes">
-                <Setter Property="FontSize" Value="Subtitle" />
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-            </Style>
-
-            <Style TargetType="Label" x:Key="styleBaseLabelTitleView">
-                <Setter Property="FontSize" Value="Medium" />
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="WidthRequest" Value="200" />                
             </Style>
 
             <Style TargetType="Label" x:Key="styleLabelNomeCarro" BasedOn="{StaticResource styleLabelEspecificacoes}">
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontSize" Value="Medium" />
             </Style>
+            <!--Fim Style PrincipalPage-->
 
-            <Style TargetType="ImageButton" x:Key="styleButtonTitleView">
-                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
-                <Setter Property="WidthRequest" Value="30" />
-                <Setter Property="HeightRequest" Value="30" />
-                <Setter Property="Margin" Value="0,0,15,0" />
+            <!--Style AdicionarCardPage-->
+            <Style TargetType="StackLayout" x:Key="styleStackLayoutCamera">
+                <Setter Property="BackgroundColor" Value="AliceBlue" />
+                <Setter Property="HeightRequest" Value="250" />
             </Style>
 
             <Style TargetType="ImageButton" x:Key="styleButtonCamera">
@@ -115,7 +93,62 @@
                 <Setter Property="TranslationY" Value="55" />
             </Style>
 
-            <Style TargetType="Button" x:Key="styleBaseButton">                
+            <Style TargetType="Image" x:Key="styleImage">
+                <Setter Property="Aspect" Value="AspectFill" />
+                <Setter Property="HeightRequest" Value="250" />
+            </Style>
+
+            <Style TargetType="Frame" x:Key="styleFramePrincipalAdicionarCard">
+                <Setter Property="CornerRadius" Value="40" />
+                <Setter Property="BackgroundColor" Value="#F2F2F2" />
+                <Setter Property="TranslationY" Value="210" />
+            </Style>
+
+            <Style TargetType="Frame" x:Key="styleFramePrincipalTopoAdicionarCard" BasedOn="{StaticResource styleBaseFramePrincipalTopo}">
+                <Setter Property="Margin" Value="10,0" />
+                <Setter Property="Padding" Value="0" />
+            </Style>
+
+            <Style TargetType="Picker" x:Key="stylePicker">
+                <Setter Property="Margin" Value="10,0" />
+                <Setter Property="Title" Value="Marca" />
+                <Setter Property="TitleColor" Value="White" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <Style TargetType="Entry" x:Key="styleEntry">
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="Margin" Value="10,0" />
+                <Setter Property="Placeholder" Value="Nome Carro" />
+                <Setter Property="PlaceholderColor" Value="White" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="White" />
+                <!--<Setter Property="HorizontalOptions" Value="CenterAndExpand" />-->
+            </Style>
+
+            <Style TargetType="Frame" x:Key="styleBaseFrameEntry">
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Margin" Value="10,0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HeightRequest" Value="120" />
+                <Setter Property="WidthRequest" Value="100" />
+            </Style>
+
+            <Style TargetType="Grid" x:Key="styleGridEntry">
+                <Setter Property="Padding" Value="5" />
+            </Style>
+
+            <Style TargetType="Frame" x:Key="styleFrameEntry">
+                <Setter Property="Grid.Row" Value="1" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Padding" Value="0" />
+            </Style>
+
+            <Style TargetType="Button" x:Key="styleBaseButton">
                 <Setter Property="Margin" Value="10" />
                 <Setter Property="CornerRadius" Value="10" />
                 <Setter Property="BorderWidth" Value="1" />
@@ -132,19 +165,7 @@
                 <Setter Property="BackgroundColor" Value="#F2DEDE" />
                 <Setter Property="BorderColor" Value="Red" />
             </Style>
-
-            <Style TargetType="Grid" x:Key="styleGridEntry">
-                <Setter Property="Padding" Value="5" />
-            </Style>
-
-            <Style TargetType="Entry" x:Key="styleEntry">
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-            </Style>
-
-            <Style TargetType="StackLayout" x:Key="styleStackLayoutCamera">
-                <Setter Property="BackgroundColor" Value="AliceBlue" />
-                <Setter Property="HeightRequest" Value="250" />
-            </Style>
+            <!--Fim Style AdicionarCardPage-->            
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

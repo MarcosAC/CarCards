@@ -9,9 +9,9 @@
              mc:Ignorable="d"
              x:Class="CarCards.Views.AdicionarCardPage"
              NavigationPage.HasNavigationBar="False">
-    
+
     <ContentPage.Content>
-        <Grid>
+        <Grid BackgroundColor="#F2F2F2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
@@ -24,18 +24,18 @@
                              x:Name="TirarFoto"  
                              Source="camera1" 
                              Clicked="TirarFoto_Click"/>
-                
+
                 <Image x:Name="Imagem" Style="{StaticResource styleImage}"/>
             </StackLayout>
 
-            <Frame Style="{StaticResource styleFrameBackGroundEntry}" />
+            <Frame Style="{StaticResource styleFramePrincipalAdicionarCard}" />
 
             <Grid Grid.Row="1" TranslationY="-35">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
 
-                <Frame CornerRadius="30" BorderColor="#D9D9D9" BackgroundColor="#337ab7" Margin="10,0" Padding="0">
+                <Frame Style="{StaticResource styleFramePrincipalTopoAdicionarCard}">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
@@ -46,13 +46,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <control:CustomPicker Margin="10,0"
-                                              Title="Marca"
-                                              TitleColor="White"
-                                              FontSize="Medium"
-                                              FontAttributes="Bold"
-                                              TextColor="White"
-                                              HorizontalOptions="CenterAndExpand">
+                        <control:CustomPicker Style="{StaticResource stylePicker}">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
                                     <x:String>Ford</x:String>
@@ -64,13 +58,7 @@
                         </control:CustomPicker>
 
                         <control:CustomEntry Style="{StaticResource styleEntry}" 
-                                             Margin="10,0"
-                                             Grid.Column="1"
-                                             Placeholder="Nome Carro"
-                                             PlaceholderColor="White"
-                                             FontSize="Medium"
-                                             FontAttributes="Bold"
-                                             TextColor="White" />
+                                             Grid.Column="1" />
                     </Grid>
                 </Frame>
             </Grid>
@@ -79,7 +67,7 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />                        
+                        <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
@@ -87,7 +75,7 @@
                         <ColumnDefinition Width="auto" />
                         <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
-                </Grid>                
+                </Grid>
 
                 <!--Campo Ano-->
                 <Frame Style="{StaticResource styleBaseFrameEntry}"
@@ -250,7 +238,7 @@
                 </Frame>
             </Grid>
 
-            <!--Botões-->            
+            <!--Botões-->
             <Grid Grid.Row="3" Margin="0,0,0,0" Padding="0" TranslationY="-15">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
