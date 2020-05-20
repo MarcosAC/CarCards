@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace CarCards.ViewModels
 {
-    public class PrincipalViewModel : BindableBase
+    public class MainPageViewModel : BindableBase
     {
         private readonly INavigationService _navigationService;
         
-        public ObservableCollection<Carro> Carros { get; }
+        public ObservableCollection<Card> Cards { get; }
 
-        public PrincipalViewModel(INavigationService navigationService)
+        public MainPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
 
-            Carros = new ObservableCollection<Carro>
+            Cards = new ObservableCollection<Card>
             {
-                new Carro
+                new Card
                 {
                     Nome = "Opala Comodoro",
                     Ano = "1979",
@@ -28,7 +28,7 @@ namespace CarCards.ViewModels
                     Velocidade = "165,4 km/h",
                 },
 
-                new Carro
+                new Card
                 {
                     Nome = "Opala Comodoro",
                     Ano = "1979",
@@ -36,7 +36,7 @@ namespace CarCards.ViewModels
                     Velocidade = "165,4 km/h",
                 },
 
-                new Carro
+                new Card
                 {
                     Nome = "Opala Comodoro",
                     Ano = "1979",
@@ -44,7 +44,7 @@ namespace CarCards.ViewModels
                     Velocidade = "165,4 km/h",
                 },
 
-                new Carro
+                new Card
                 {
                     Nome = "Opala Comodoro",
                     Ano = "1979",
@@ -52,7 +52,7 @@ namespace CarCards.ViewModels
                     Velocidade = "165,4 km/h",
                 },
 
-                new Carro
+                new Card
                 {
                     Nome = "Opala Comodoro",
                     Ano = "1979",
@@ -63,10 +63,10 @@ namespace CarCards.ViewModels
 
         }
         
-        private DelegateCommand _irAdicionarCardPage;
-        public DelegateCommand IrAdicionarCardPage => 
-            _irAdicionarCardPage ?? (_irAdicionarCardPage = new DelegateCommand(async () => await ExecuteIrAdicionarCardPage()));
+        private DelegateCommand _goToAddCardPage;
+        public DelegateCommand GoToCarPage => 
+            _goToAddCardPage ?? (_goToAddCardPage = new DelegateCommand(async () => await ExecuteIrAdicionarCardPage()));
 
-        private async Task ExecuteIrAdicionarCardPage() => await _navigationService.NavigateAsync("AdicionarCardPage");
+        private async Task ExecuteIrAdicionarCardPage() => await _navigationService.NavigateAsync("AddCardPage");
     }
 }

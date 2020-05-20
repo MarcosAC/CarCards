@@ -1,6 +1,6 @@
 ﻿namespace CarCards.Models
 {
-    public class Carro
+    public class Card
     {
         public string Nome { get; set; }
         public string Ano { get; set; }

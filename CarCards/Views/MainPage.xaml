@@ -6,7 +6,7 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              mc:Ignorable="d"
-             x:Class="CarCards.Views.PrincipalPage">
+             x:Class="CarCards.Views.MainPage">
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
@@ -14,12 +14,12 @@
 
             <ImageButton Style="{StaticResource styleButtonTitleView}"
                          Source="imgBtnAdicionar"
-                         Command="{Binding IrAdicionarCardPage}" />
+                         Command="{Binding GoToCarPage}" />
         </StackLayout>
     </NavigationPage.TitleView>
     
     <ContentPage.Content>
-        <CarouselView ItemsSource="{Binding Carros}" ItemsLayout="HorizontalList">
+        <CarouselView ItemsSource="{Binding Cards}" ItemsLayout="HorizontalList">
             <CarouselView.ItemTemplate SnapPointsAlignment="Center" SnapPointsType="Mandatory">
                 <DataTemplate>
                     <StackLayout Padding="0" BackgroundColor="#F2F2F2">

@@ -2,9 +2,9 @@
 
 namespace CarCards.Views
 {
-    public partial class PrincipalPage : ContentPage
+    public partial class MainPage : ContentPage
     {
-        public PrincipalPage()
+        public MainPage()
         {
             InitializeComponent();  
         }

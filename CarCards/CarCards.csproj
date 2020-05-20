@@ -21,19 +21,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\AdicionarCardPage.xaml.cs">
-      <DependentUpon>AdicionarCardPage.xaml</DependentUpon>
+    <Compile Update="Views\AddCardPage.xaml.cs">
+      <DependentUpon>AddCardPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\PrincipalPage.xaml.cs">
-      <DependentUpon>PrincipalPage.xaml</DependentUpon>
+    <Compile Update="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\AdicionarCardPage.xaml">
+    <EmbeddedResource Update="Views\AddCardPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PrincipalPage.xaml">
+    <EmbeddedResource Update="Views\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

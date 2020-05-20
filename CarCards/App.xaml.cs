@@ -27,14 +27,14 @@ namespace CarCards
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("/NavigationPage/PrincipalPage");
+            await NavigationService.NavigateAsync("/NavigationPage/MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<PrincipalPage, PrincipalViewModel>();
-            containerRegistry.RegisterForNavigation<AdicionarCardPage>();
+            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<AddCardPage>();
             //containerRegistry.RegisterForNavigation<ViewB, ViewBViewModel>();
             //containerRegistry.RegisterForNavigation<ViewC, ViewCViewModel>();
         }
