@@ -4,15 +4,25 @@ using Prism.Ioc;
 using Prism.DryIoc;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Prism;
 
 namespace CarCards
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class App
+    public partial class App : PrismApplication
     {
         public App()
         {
         }
+
+        public App(IPlatformInitializer platformInitializer) : base(platformInitializer)
+        {
+        }
+
+        public App(IPlatformInitializer platformInitializer, bool setFormsDependencyResolver) : base(platformInitializer, setFormsDependencyResolver)
+        {
+        }
+
         protected override async void OnInitialized()
         {
             InitializeComponent();
