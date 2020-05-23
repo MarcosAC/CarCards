@@ -57,8 +57,9 @@
                             </Picker.ItemsSource>
                         </control:CustomPicker>
 
-                        <control:CustomEntry Style="{StaticResource styleEntry}" 
-                                             Grid.Column="1" />
+                        <control:CustomEntry Style="{StaticResource styleEntryNomeCarro}" 
+                                             Grid.Column="1"
+                                             Text="{Binding NomeCarro}" />
                     </Grid>
                 </Frame>
             </Grid>
@@ -97,8 +98,10 @@
                                    TextColor="#31708F" />
                         </StackLayout>
 
-                        <Frame Style="{StaticResource styleFrameEntry}">
-                            <control:CustomEntry Style="{StaticResource styleEntry}" TextColor="#31708F" />
+                        <Frame Style="{StaticResource styleFrameEntry}" >
+                            <control:CustomEntry Style="{StaticResource styleEntry}"
+                                                 Text="{Binding Ano}"
+                                                 TextColor="#31708F" />
                         </Frame>
                     </Grid>
                 </Frame>
@@ -124,7 +127,9 @@
                         </StackLayout>
 
                         <Frame Style="{StaticResource styleFrameEntry}">
-                            <control:CustomEntry Style="{StaticResource styleEntry}" TextColor="#A94442" />
+                            <control:CustomEntry Style="{StaticResource styleEntry}"
+                                                 TextColor="#A94442"
+                                                 Text="{Binding Velocidade}" />
                         </Frame>
                     </Grid>
                 </Frame>
@@ -151,7 +156,9 @@
                         </StackLayout>
 
                         <Frame Style="{StaticResource styleFrameEntry}">
-                            <control:CustomEntry Style="{StaticResource styleEntry}" TextColor="#D43F3A" />
+                            <control:CustomEntry Style="{StaticResource styleEntry}"
+                                                 TextColor="#D43F3A"
+                                                 Text="{Binding Aceleracao}" />
                         </Frame>
                     </Grid>
                 </Frame>
@@ -178,7 +185,9 @@
                         </StackLayout>
 
                         <Frame Style="{StaticResource styleFrameEntry}">
-                            <control:CustomEntry Style="{StaticResource styleEntry}" TextColor="#EEA236" />
+                            <control:CustomEntry Style="{StaticResource styleEntry}"
+                                                 TextColor="#EEA236"
+                                                 Text="{Binding Potencia}" />
                         </Frame>
                     </Grid>
                 </Frame>
@@ -205,7 +214,9 @@
                         </StackLayout>
 
                         <Frame Style="{StaticResource styleFrameEntry}">
-                            <control:CustomEntry Style="{StaticResource styleEntry}" TextColor="#6959cd" />
+                            <control:CustomEntry Style="{StaticResource styleEntry}"
+                                                 TextColor="#6959cd"
+                                                 Text="{Binding Cilindradas}" />
                         </Frame>
                     </Grid>
                 </Frame>
@@ -232,7 +243,9 @@
                         </StackLayout>
 
                         <Frame Style="{StaticResource styleFrameEntry}">
-                            <control:CustomEntry Style="{StaticResource styleEntry}" TextColor="#9805f6" />
+                            <control:CustomEntry Style="{StaticResource styleEntry}"
+                                                 TextColor="#9805f6"
+                                                 Text="{Binding Motor}" />
                         </Frame>
                     </Grid>
                 </Frame>
@@ -249,7 +262,9 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Button Style="{StaticResource styleButtonSalvar}" Text="Salvar" />
+                <Button Style="{StaticResource styleButtonSalvar}" 
+                        Text="Salvar"
+                        Command="{Binding AddCardCommand}"/>
 
                 <Button Style="{StaticResource styleButtonCancelar}"
                         Grid.Column="1" 

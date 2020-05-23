@@ -22,7 +22,7 @@ namespace CarCards.ViewModels
             {
                 new Card
                 {
-                    Nome = "Opala Comodoro",
+                    NomeCarro = "Opala Comodoro",
                     Ano = "1979",
                     //Cor = "Branco",
                     Velocidade = "165,4 km/h",
@@ -30,7 +30,7 @@ namespace CarCards.ViewModels
 
                 new Card
                 {
-                    Nome = "Opala Comodoro",
+                    NomeCarro = "Opala Comodoro",
                     Ano = "1979",
                    // Cor = "Branco",
                     Velocidade = "165,4 km/h",
@@ -38,7 +38,7 @@ namespace CarCards.ViewModels
 
                 new Card
                 {
-                    Nome = "Opala Comodoro",
+                    NomeCarro = "Opala Comodoro",
                     Ano = "1979",
                     //Cor = "Branco",
                     Velocidade = "165,4 km/h",
@@ -46,7 +46,7 @@ namespace CarCards.ViewModels
 
                 new Card
                 {
-                    Nome = "Opala Comodoro",
+                    NomeCarro = "Opala Comodoro",
                     Ano = "1979",
                     //Cor = "Branco",
                     Velocidade = "165,4 km/h",
@@ -54,7 +54,7 @@ namespace CarCards.ViewModels
 
                 new Card
                 {
-                    Nome = "Opala Comodoro",
+                    NomeCarro = "Opala Comodoro",
                     Ano = "1979",
                     //Cor = "Branco",
                     Velocidade = "165,4 km/h",
@@ -64,8 +64,7 @@ namespace CarCards.ViewModels
         }
         
         private DelegateCommand _goToAddCardPage;
-        public DelegateCommand GoToCarPage => 
-            _goToAddCardPage ?? (_goToAddCardPage = new DelegateCommand(async () => await ExecuteIrAdicionarCardPage()));
+        public DelegateCommand GoToCarPage => _goToAddCardPage ?? (_goToAddCardPage = new DelegateCommand(async () => await ExecuteIrAdicionarCardPage()));
 
         private async Task ExecuteIrAdicionarCardPage() => await _navigationService.NavigateAsync("AddCardPage");
     }
