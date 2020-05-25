@@ -155,7 +155,11 @@ namespace CarCards.ViewModels
 
             DataCarCards.Add(card);
 
-           App.Current.MainPage.DisplayAlert("Grarvar Dados", "Funcionou", "Ok");
+            //var dados = DataCarCards.Get();
+
+            //Foto = ImageSource.FromFile(dados.CaminhoFoto);
+
+            App.Current.MainPage.DisplayAlert("Gravar Dados", "Funcionou", "Ok");
         }
     }
 }

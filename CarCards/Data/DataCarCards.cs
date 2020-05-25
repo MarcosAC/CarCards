@@ -1,6 +1,7 @@
 ﻿using CarCards.Helpers;
 using CarCards.Models;
 using LiteDB;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace CarCards.Data
@@ -20,6 +21,13 @@ namespace CarCards.Data
         public void Add(Card card)
         {            
             cards.Insert(card);            
-        }        
+        }  
+        
+        public Card Get()
+        {
+            var dados = cards.FindAll().First();
+
+            return dados;
+        }
     }
 }
