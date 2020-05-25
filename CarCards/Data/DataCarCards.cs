@@ -1,11 +1,6 @@
 ﻿using CarCards.Helpers;
 using CarCards.Models;
 using LiteDB;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace CarCards.Data
@@ -13,7 +8,7 @@ namespace CarCards.Data
     public class DataCarCards
     {
         private readonly LiteDatabase _dataBase;
-        private readonly LiteCollection<Card> cards;       
+        private readonly LiteCollection<Card> cards;      
 
         public DataCarCards()
         {
@@ -23,8 +18,8 @@ namespace CarCards.Data
         }
 
         public void Add(Card card)
-        {
-            cards.Insert(card);
+        {            
+            cards.Insert(card);            
         }        
     }
 }

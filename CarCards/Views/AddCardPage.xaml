@@ -21,11 +21,10 @@
 
             <StackLayout Style="{StaticResource styleStackLayoutCamera}">
                 <ImageButton Style="{StaticResource styleButtonCamera}"
-                             x:Name="TirarFoto"  
-                             Source="camera1" 
-                             Clicked="TirarFoto_Click"/>
+                             Source="camera1"
+                             Command="{Binding TakePhotoCommand}" />
 
-                <Image x:Name="Imagem" Style="{StaticResource styleImage}"/>
+                <Image Source="{Binding Foto}" Style="{StaticResource styleImage}"/>
             </StackLayout>
 
             <Frame Style="{StaticResource styleFramePrincipalAdicionarCard}" />

@@ -1,4 +1,6 @@
-﻿namespace CarCards.Models
+﻿using Xamarin.Forms;
+
+namespace CarCards.Models
 {
     public class Card
     {
@@ -9,8 +11,8 @@
         public string Potencia { get; set; }
         public string Cilindradas { get; set; }
         public string Motor { get; set; }
-
-        //public string Foto { get; set; }
+        public ImageSource Foto { get; set; }
+        public string CaminhoFoto { get; set; }
         //public string ImagemMarca { get; set; }
     }
 }
