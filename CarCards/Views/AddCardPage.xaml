@@ -22,6 +22,7 @@
             <StackLayout Style="{StaticResource styleStackLayoutCamera}">
                 <ImageButton Style="{StaticResource styleButtonCamera}"
                              Source="camera1"
+                             IsVisible="{Binding ImageButtonIsVisible}"
                              Command="{Binding TakePhotoCommand}" />
 
                 <Image Source="{Binding Foto}" Style="{StaticResource styleImage}"/>

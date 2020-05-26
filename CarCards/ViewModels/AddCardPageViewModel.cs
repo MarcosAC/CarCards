@@ -13,11 +13,11 @@ namespace CarCards.ViewModels
     {
         readonly DataCarCards DataCarCards = new DataCarCards();
 
-        private bool _visible = true;
-        public bool Visible
+        private bool _imageButtonIsVisible = true;
+        public bool ImageButtonIsVisible
         {
-            get => _visible;
-            set => SetProperty(ref _visible, value);
+            get => _imageButtonIsVisible;
+            set => SetProperty(ref _imageButtonIsVisible, value);
         }
 
         private ImageSource _foto;
@@ -88,7 +88,7 @@ namespace CarCards.ViewModels
             if (file == null)
                 return;
             else
-                Visible = false;
+                ImageButtonIsVisible = false;
 
             Foto = ImageSource.FromStream(() =>
             {
