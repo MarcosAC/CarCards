@@ -18,20 +18,13 @@ namespace CarCards.ViewModels
         {
             get => _imageButtonIsVisible;
             set => SetProperty(ref _imageButtonIsVisible, value);
-        }
+        }        
 
-        private ImageSource _foto;
-        public ImageSource Foto
+        private string _marca;
+        public string Marca 
         {
-            get => _foto;
-            set => SetProperty(ref _foto, value);
-        }
-
-        private string _caminhoFoto;
-        public string CaminhoFoto
-        {
-            get => _caminhoFoto;
-            set => SetProperty(ref _caminhoFoto, value);
+            get => _marca;
+            set => SetProperty(ref _marca, value);
         }
 
         private string _nomeCarro;
@@ -83,18 +76,18 @@ namespace CarCards.ViewModels
             set => SetProperty(ref _motor, value);
         }
 
-        private void CarregarFoto(MediaFile file)
+        private ImageSource _foto;
+        public ImageSource Foto
         {
-            if (file == null)
-                return;
-            else
-                ImageButtonIsVisible = false;
+            get => _foto;
+            set => SetProperty(ref _foto, value);
+        }
 
-            Foto = ImageSource.FromStream(() =>
-            {
-                var stream = file.GetStream();
-                return stream;
-            });
+        private string _caminhoFoto;
+        public string CaminhoFoto
+        {
+            get => _caminhoFoto;
+            set => SetProperty(ref _caminhoFoto, value);
         }
 
         private DelegateCommand _takePhotoCommand;
@@ -143,6 +136,7 @@ namespace CarCards.ViewModels
         {
             var card = new Card
             {
+                Marca = Marca,
                 NomeCarro = NomeCarro,
                 Ano = Ano,
                 Velocidade = Velocidade,
@@ -160,6 +154,20 @@ namespace CarCards.ViewModels
             //Foto = ImageSource.FromFile(dados.CaminhoFoto);
 
             App.Current.MainPage.DisplayAlert("Gravar Dados", "Funcionou", "Ok");
+        }
+
+        private void CarregarFoto(MediaFile file)
+        {
+            if (file == null)
+                return;
+            else
+                ImageButtonIsVisible = false;
+
+            Foto = ImageSource.FromStream(() =>
+            {
+                var stream = file.GetStream();
+                return stream;
+            });
         }
     }
 }

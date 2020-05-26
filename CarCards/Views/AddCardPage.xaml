@@ -46,7 +46,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <control:CustomPicker Style="{StaticResource stylePicker}">
+                        <control:CustomPicker Style="{StaticResource stylePicker}" SelectedItem="{Binding Marca}">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
                                     <x:String>Ford</x:String>
