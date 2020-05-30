@@ -1,6 +1,7 @@
 ﻿using CarCards.Helpers;
 using CarCards.Models;
 using LiteDB;
+using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
 
@@ -9,6 +10,7 @@ namespace CarCards.Data
     public class DataCarCards
     {
         private readonly LiteDatabase _dataBase;
+
         private readonly LiteCollection<Card> cards;      
 
         public DataCarCards()
@@ -23,11 +25,9 @@ namespace CarCards.Data
             cards.Insert(card);            
         }  
         
-        public Card Get()
+        public List<Card> GetAll()
         {
-            var dados = cards.FindAll().First();
-
-            return dados;
+            return cards.FindAll().ToList();
         }
     }
 }

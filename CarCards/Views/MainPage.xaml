@@ -24,7 +24,7 @@
                 <DataTemplate>
                     <StackLayout Padding="0" BackgroundColor="#F2F2F2">
 
-                        <Image Source="OpalaBranco.jpg" />
+                        <Image Source="{Binding CaminhoFoto}" HeightRequest="280" Aspect="AspectFill" />
 
                         <!--Especificações-->
                         <Frame Style="{StaticResource styleFramePrincipal}">
@@ -56,14 +56,13 @@
                                             <Image Style="{StaticResource styleImageEspecificoes}" Source="ano" />
 
                                             <Label Style="{StaticResource styleLabelEspecificacoes}"
-                                                   FontAttributes="Bold"
                                                    Text="Ano"
                                                    TextColor="#31708F" />
                                         </StackLayout>
 
                                         <Frame Style="{StaticResource styleFrameDadosCarro}">
                                             <Label Style="{StaticResource styleLabelEspecificacoes}"                                                    
-                                                   Text="1979"
+                                                   Text="{Binding Ano}"
                                                    TextColor="#31708F" />
                                         </Frame>
                                     </Grid>
@@ -92,7 +91,7 @@
                                         <Frame Style="{StaticResource styleFrameDadosCarro}">
                                             <Label Style="{StaticResource styleLabelEspecificacoes}"
                                                    Grid.Row="1"
-                                                   Text="174"
+                                                   Text="{Binding Velocidade}"
                                                    TextColor="#A94442" />
                                         </Frame>
                                     </Grid>
@@ -114,7 +113,6 @@
                                             <Image Style="{StaticResource styleImageEspecificoes}" Source="aceleracao" />
 
                                             <Label Style="{StaticResource styleLabelEspecificacoes}"
-                                                   FontAttributes="Bold"
                                                    Text="0 à 100"
                                                    TextColor="#D43F3A" />
                                         </StackLayout>
@@ -122,7 +120,7 @@
                                         <Frame Style="{StaticResource styleFrameDadosCarro}">
                                             <Label Style="{StaticResource styleLabelEspecificacoes}"
                                                    Grid.Row="1"
-                                                   Text="14 seg."
+                                                   Text="{Binding Aceleracao}"
                                                    TextColor="#D43F3A" />
                                         </Frame>
                                     </Grid>
@@ -144,7 +142,6 @@
                                             <Image Style="{StaticResource styleImageEspecificoes}" Source="potencia" />
 
                                             <Label Style="{StaticResource styleLabelEspecificacoes}"
-                                                   FontAttributes="Bold"
                                                    Text="Potência"
                                                    TextColor="#EEA236" />
                                         </StackLayout>
@@ -152,7 +149,7 @@
                                         <Frame Style="{StaticResource styleFrameDadosCarro}">
                                             <Label Style="{StaticResource styleLabelEspecificacoes}"
                                                    Grid.Row="1"
-                                                   Text="98 cv"
+                                                   Text="{Binding Potencia}"
                                                    TextColor="#EEA236" />
                                         </Frame>
                                     </Grid>
@@ -182,7 +179,7 @@
                                         <Frame Style="{StaticResource styleFrameDadosCarro}">
                                             <Label Style="{StaticResource styleLabelEspecificacoes}"
                                                    Grid.Row="1"
-                                                   Text="1999 CC"
+                                                   Text="{Binding Cilindradas}"
                                                    TextColor="#6959cd" />
                                         </Frame>
                                     </Grid>
@@ -212,7 +209,7 @@
                                         <Frame Style="{StaticResource styleFrameDadosCarro}">
                                             <Label Style="{StaticResource styleLabelEspecificacoes}"
                                                    Grid.Row="1"
-                                                   Text="6 Cilind."
+                                                   Text="{Binding Motor}"
                                                    TextColor="#9805f6" />
                                         </Frame>
                                     </Grid>
@@ -226,7 +223,7 @@
                             <StackLayout Orientation="Horizontal">
                                 <Image Style="{StaticResource styleImageEspecificoes}" Source="chevrolet" />
 
-                                <Label Text="{Binding Nome}" Style="{StaticResource styleLabelNomeCarro}" />
+                                <Label Text="{Binding NomeCarro}" Style="{StaticResource styleLabelNomeCarro}" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>
