@@ -1,5 +1,4 @@
-﻿using CarCards.Data;
-using CarCards.Models;
+﻿using CarCards.Models;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Prism.Commands;
@@ -11,11 +10,9 @@ namespace CarCards.ViewModels
 {
     public class AddCardPageViewModel : BindableBase
     {
-        private readonly DataCarCards dataCarCards;        
-
         public AddCardPageViewModel()
         {
-            dataCarCards = new DataCarCards();
+            
         }
 
         private bool _imageButtonIsVisible = true;
@@ -151,12 +148,6 @@ namespace CarCards.ViewModels
                 Motor = Motor,
                 CaminhoFoto = CaminhoFoto
             };
-
-            dataCarCards.Add(card);
-
-            //var dados = DataCarCards.Get();
-
-            //Foto = ImageSource.FromFile(dados.CaminhoFoto);
 
             App.Current.MainPage.DisplayAlert("Gravar Dados", "Funcionou", "Ok");
         }
