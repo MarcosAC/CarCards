@@ -1,10 +1,10 @@
 ﻿using CarCards.ViewModels;
 using CarCards.Views;
-using Prism.Ioc;
+using Prism;
 using Prism.DryIoc;
+using Prism.Ioc;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Prism;
 
 namespace CarCards
 {
@@ -25,7 +25,7 @@ namespace CarCards
 
         protected override async void OnInitialized()
         {
-            InitializeComponent();
+            InitializeComponent();           
 
             await NavigationService.NavigateAsync("/NavigationPage/MainPage");
         }
@@ -34,7 +34,7 @@ namespace CarCards
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-            containerRegistry.RegisterForNavigation<AddCardPage>();
+            containerRegistry.RegisterForNavigation<AddCardPage, AddCardPageViewModel>();
             //containerRegistry.RegisterForNavigation<ViewB, ViewBViewModel>();
             //containerRegistry.RegisterForNavigation<ViewC, ViewCViewModel>();
         }

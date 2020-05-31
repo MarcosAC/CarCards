@@ -11,7 +11,12 @@ namespace CarCards.ViewModels
 {
     public class AddCardPageViewModel : BindableBase
     {
-        readonly DataCarCards DataCarCards = new DataCarCards();
+        private readonly DataCarCards dataCarCards;        
+
+        public AddCardPageViewModel()
+        {
+            dataCarCards = new DataCarCards();
+        }
 
         private bool _imageButtonIsVisible = true;
         public bool ImageButtonIsVisible
@@ -130,7 +135,7 @@ namespace CarCards.ViewModels
         }
 
         private DelegateCommand _addCardCommand;
-        public DelegateCommand AddCardCommand => _addCardCommand ?? (new DelegateCommand(() => ExecuteAddCardCommand()));
+        public DelegateCommand AddCardCommand => _addCardCommand ?? (_addCardCommand = new DelegateCommand(() => ExecuteAddCardCommand()));
 
         private void ExecuteAddCardCommand()
         {
@@ -147,7 +152,7 @@ namespace CarCards.ViewModels
                 CaminhoFoto = CaminhoFoto
             };
 
-            DataCarCards.Add(card);
+            dataCarCards.Add(card);
 
             //var dados = DataCarCards.Get();
 

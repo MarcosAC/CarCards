@@ -1,6 +1,7 @@
 ﻿using CarCards.Helpers;
 using CarCards.Models;
 using LiteDB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
@@ -9,19 +10,21 @@ namespace CarCards.Data
 {
     public class DataCarCards
     {
-        private readonly LiteDatabase _dataBase;
+        //LiteDatabase _dataBase;
 
-        private readonly LiteCollection<Card> cards;      
+        LiteCollection<Card> cards;      
 
         public DataCarCards()
         {
-            _dataBase = new LiteDatabase(DependencyService.Get<IPathDataBase>().FilePath("CarCardsDb.db"));
+            var dataBase = new LiteDatabase(DependencyService.Get<IPathDataBase>().FilePath("CarCardsDb.db"));
 
-            cards = (LiteCollection<Card>)_dataBase.GetCollection<Card>();
+            cards = (LiteCollection<Card>)dataBase.GetCollection<Card>();
         }
 
         public void Add(Card card)
-        {            
+        {
+            card.Id = Guid.NewGuid().ToString();
+
             cards.Insert(card);            
         }  
         

@@ -4,6 +4,7 @@ namespace CarCards.Models
 {
     public class Card
     {
+        public string Id { get; set; }
         public string Marca { get; set; }
         public string NomeCarro { get; set; }
         public string Ano { get; set; }

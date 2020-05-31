@@ -7,14 +7,13 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
-
 namespace CarCards.ViewModels
 {
     public class MainPageViewModel : BindableBase
     {
         private readonly INavigationService _navigationService;
 
-        readonly DataCarCards DataCarCards = new DataCarCards();
+        private readonly DataCarCards dataCarCards;
 
         public ObservableCollection<Card> Cards { get; }
 
@@ -22,17 +21,19 @@ namespace CarCards.ViewModels
         {
             _navigationService = navigationService;
 
+            dataCarCards = new DataCarCards();
+
             Cards = new ObservableCollection<Card>(LoadCards());
         }
         
         private DelegateCommand _goToAddCardPage;
-        public DelegateCommand GoToCarPage => _goToAddCardPage ?? (_goToAddCardPage = new DelegateCommand(async () => await ExecuteIrAdicionarCardPage()));
+        public DelegateCommand GoToAddCardPage => _goToAddCardPage ?? (_goToAddCardPage = new DelegateCommand(async () => await ExecuteIrGoToAddCardPage()));
 
-        private async Task ExecuteIrAdicionarCardPage() => await _navigationService.NavigateAsync("AddCardPage");
+        private async Task ExecuteIrGoToAddCardPage() => await _navigationService.NavigateAsync("AddCardPage");
 
         private List<Card> LoadCards()
         {
-            return DataCarCards.GetAll();
+            return dataCarCards.GetAll();
         }
     }
 }
