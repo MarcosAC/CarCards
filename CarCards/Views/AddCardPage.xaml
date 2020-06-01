@@ -57,8 +57,9 @@
                             </Picker.ItemsSource>
                         </control:CustomPicker>
 
+                        <!--Campo Nome do Carro-->
                         <control:CustomEntry Style="{StaticResource styleEntryNomeCarro}" 
-                                             Grid.Column="1"
+                                             Grid.Column="1"                                             
                                              Text="{Binding NomeCarro}" />
                     </Grid>
                 </Frame>
