@@ -12,7 +12,7 @@ namespace CarCards.ViewModels
     {
         private readonly INavigationService _navigationService;
 
-        private readonly CarCardsData carCardsData;
+        private readonly CarCardsData _carCardsData;
 
         public ObservableCollection<Card> Cards { get; set; }
 
@@ -20,9 +20,9 @@ namespace CarCards.ViewModels
         {
             _navigationService = navigationService;
 
-            carCardsData = new CarCardsData(); 
+            _carCardsData = new CarCardsData(); 
             
-            Cards = new ObservableCollection<Card>(carCardsData.GetAll());
+            Cards = new ObservableCollection<Card>(_carCardsData.GetAll());
         }
         
         private DelegateCommand _goToAddCardPage;
@@ -30,18 +30,8 @@ namespace CarCards.ViewModels
 
         private async Task ExecuteIrGoToAddCardPage() => await _navigationService.NavigateAsync("AddCardPage");
 
-        private void Refresh()
-        {
-            Cards = new ObservableCollection<Card>(carCardsData.GetAll());
-        }
-        public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-            
-        }
+        public void OnNavigatedTo(INavigationParameters parameters) => Cards = new ObservableCollection<Card>(_carCardsData.GetAll());
 
-        public void OnNavigatedTo(INavigationParameters parameters)
-        {
-            Refresh();
-        }
+        public void OnNavigatedFrom(INavigationParameters parameters) { }
     }
 }

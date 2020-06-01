@@ -14,13 +14,13 @@ namespace CarCards.ViewModels
     {
         private readonly INavigationService _navigationService;
 
-        private readonly CarCardsData carCardsData;
+        private readonly CarCardsData _carCardsData;
 
         public AddCardPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
 
-            carCardsData = new CarCardsData();
+            _carCardsData = new CarCardsData();
         }
 
         private bool _imageButtonIsVisible = true;
@@ -128,8 +128,7 @@ namespace CarCards.ViewModels
             {
                 var file = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions
                 {
-                    PhotoSize = PhotoSize.Medium,
-
+                    PhotoSize = PhotoSize.Medium
                 });
 
                 if (file == null)
@@ -157,7 +156,7 @@ namespace CarCards.ViewModels
                 CaminhoFoto = CaminhoFoto
             };
 
-            carCardsData.Add(card);
+            _carCardsData.Add(card);
 
             App.Current.MainPage.DisplayAlert("Gravar Dados", "Funcionou", "Ok");
 
