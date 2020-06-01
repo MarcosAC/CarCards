@@ -1,6 +1,5 @@
 ﻿using CarCards.Data;
 using CarCards.Models;
-using Prism.AppModel;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarCards.ViewModels
 {
-    public class MainPageViewModel : BindableBase, INavigatedAware, IPageLifecycleAware
+    public class MainPageViewModel : BindableBase, INavigatedAware
     {
         private readonly INavigationService _navigationService;
 
@@ -34,9 +33,5 @@ namespace CarCards.ViewModels
         public void OnNavigatedTo(INavigationParameters parameters) => Cards = new ObservableCollection<Card>(_carCardsData.GetAll());
 
         public void OnNavigatedFrom(INavigationParameters parameters) { }
-
-        public void OnAppearing() => Cards = new ObservableCollection<Card>(_carCardsData.GetAll());
-
-        public void OnDisappearing() { }
     }
 }
