@@ -4,6 +4,7 @@ using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -11,10 +12,14 @@ namespace CarCards.ViewModels
 {
     public class AddCardPageViewModel : BindableBase
     {
+        private readonly INavigationService _navigationService;
+
         private readonly CarCardsData carCardsData;
 
-        public AddCardPageViewModel()
+        public AddCardPageViewModel(INavigationService navigationService)
         {
+            _navigationService = navigationService;
+
             carCardsData = new CarCardsData();
         }
 
@@ -152,13 +157,11 @@ namespace CarCards.ViewModels
                 CaminhoFoto = CaminhoFoto
             };
 
-<<<<<<< HEAD
-            dataCarCards.Add(card);
-=======
             carCardsData.Add(card);
->>>>>>> RealmDB
 
             App.Current.MainPage.DisplayAlert("Gravar Dados", "Funcionou", "Ok");
+
+            _navigationService.NavigateAsync("MainPage");
         }
 
         private void CarregarFoto(MediaFile file)
