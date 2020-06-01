@@ -12,7 +12,7 @@ namespace CarCards.ViewModels
     {
         private readonly INavigationService _navigationService;
 
-        private readonly DataCarCards dataCarCards;
+        private readonly CarCardsData carCardsData;
 
         public ObservableCollection<Card> Cards { get; }
 
@@ -20,14 +20,22 @@ namespace CarCards.ViewModels
         {
             _navigationService = navigationService;
 
-            dataCarCards = new DataCarCards();
+            carCardsData = new CarCardsData();
 
+<<<<<<< HEAD
             Cards = new ObservableCollection<Card>(dataCarCards.GetAll());
+=======
+            Cards = new ObservableCollection<Card>(carCardsData.GetAll());
+>>>>>>> RealmDB
         }
         
         private DelegateCommand _goToAddCardPage;
         public DelegateCommand GoToAddCardPage => _goToAddCardPage ?? (_goToAddCardPage = new DelegateCommand(async () => await ExecuteIrGoToAddCardPage()));
 
+<<<<<<< HEAD
         private async Task ExecuteIrGoToAddCardPage() => await _navigationService.NavigateAsync("AddCardPage");        
+=======
+        private async Task ExecuteIrGoToAddCardPage() => await _navigationService.NavigateAsync("AddCardPage");
+>>>>>>> RealmDB
     }
 }

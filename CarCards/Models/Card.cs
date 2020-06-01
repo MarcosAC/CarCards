@@ -1,8 +1,9 @@
-﻿using Xamarin.Forms;
+﻿using Realms;
+using Xamarin.Forms;
 
 namespace CarCards.Models
 {
-    public class Card
+    public class Card : RealmObject
     {
         public string Id { get; set; }
         public string Marca { get; set; }
@@ -13,8 +14,9 @@ namespace CarCards.Models
         public string Potencia { get; set; }
         public string Cilindradas { get; set; }
         public string Motor { get; set; }
+
+        [Ignored]
         public ImageSource Foto { get; set; }
         public string CaminhoFoto { get; set; }
-        //public string ImagemMarca { get; set; }
     }
 }

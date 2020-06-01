@@ -11,11 +11,11 @@ namespace CarCards.ViewModels
 {
     public class AddCardPageViewModel : BindableBase
     {
-        private readonly DataCarCards dataCarCards;        
+        private readonly CarCardsData carCardsData;
 
         public AddCardPageViewModel()
         {
-            dataCarCards = new DataCarCards();
+            carCardsData = new CarCardsData();
         }
 
         private bool _imageButtonIsVisible = true;
@@ -152,7 +152,11 @@ namespace CarCards.ViewModels
                 CaminhoFoto = CaminhoFoto
             };
 
+<<<<<<< HEAD
             dataCarCards.Add(card);
+=======
+            carCardsData.Add(card);
+>>>>>>> RealmDB
 
             App.Current.MainPage.DisplayAlert("Gravar Dados", "Funcionou", "Ok");
         }
