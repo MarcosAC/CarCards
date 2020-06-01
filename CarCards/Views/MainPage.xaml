@@ -14,7 +14,7 @@
 
             <ImageButton Style="{StaticResource styleButtonTitleView}"
                          Source="imgBtnAdicionar"
-                         Command="{Binding GoToAddCardPage}" />
+                         Command="{Binding GoAddCardPageCommand}" />
         </StackLayout>
     </NavigationPage.TitleView>
     
