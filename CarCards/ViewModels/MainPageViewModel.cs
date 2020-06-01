@@ -25,10 +25,11 @@ namespace CarCards.ViewModels
             Cards = new ObservableCollection<Card>(_carCardsData.GetAll());
         }
         
-        private DelegateCommand _goToAddCardPage;
-        public DelegateCommand GoToAddCardPage => _goToAddCardPage ?? (_goToAddCardPage = new DelegateCommand(async () => await ExecuteIrGoToAddCardPage()));
+        private DelegateCommand _goToAddCardPageCommand;
+        public DelegateCommand GoToAddCardPageCommand => 
+            _goToAddCardPageCommand ?? (_goToAddCardPageCommand = new DelegateCommand(async () => await ExecuteGoToAddCardPageCommand()));
 
-        private async Task ExecuteIrGoToAddCardPage() => await _navigationService.NavigateAsync("AddCardPage");
+        private async Task ExecuteGoToAddCardPageCommand() => await _navigationService.NavigateAsync("AddCardPage");
 
         public void OnNavigatedTo(INavigationParameters parameters) => Cards = new ObservableCollection<Card>(_carCardsData.GetAll());
 

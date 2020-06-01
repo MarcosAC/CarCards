@@ -265,11 +265,12 @@
 
                 <Button Style="{StaticResource styleButtonSalvar}" 
                         Text="Salvar"
-                        Command="{Binding AddCardCommand}"/>
+                        Command="{Binding AddCardCommand}" />
 
                 <Button Style="{StaticResource styleButtonCancelar}"
                         Grid.Column="1" 
-                        Text="Cancelar" />
+                        Text="Cancelar" 
+                        Command="{Binding GoBackMainPageCommand}" />
             </Grid>
         </Grid>
     </ContentPage.Content>

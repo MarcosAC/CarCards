@@ -177,6 +177,11 @@ namespace CarCards.ViewModels
             _navigationService.NavigateAsync("MainPage");
         }
 
+        private DelegateCommand _goBackMainPageCommand;
+        public DelegateCommand GoBackMainPageCommand => _goBackMainPageCommand ?? (_goBackMainPageCommand = new DelegateCommand(async () => await ExecuteGoBackMainPageCommand()));
+
+        private async Task ExecuteGoBackMainPageCommand() => await _navigationService.NavigateAsync("MaingPage");
+
         private void CarregarFoto(MediaFile file)
         {
             if (file == null)
