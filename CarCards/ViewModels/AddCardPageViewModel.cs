@@ -5,6 +5,7 @@ using Plugin.Media.Abstractions;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -14,11 +15,15 @@ namespace CarCards.ViewModels
     {
         private readonly INavigationService _navigationService;
 
+        private readonly IPageDialogService _pageDialogService;
+
         private readonly CarCardsData _carCardsData;
 
-        public AddCardPageViewModel(INavigationService navigationService)
+        public AddCardPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
         {
             _navigationService = navigationService;
+
+            _pageDialogService = pageDialogService;
 
             _carCardsData = new CarCardsData();
         }
@@ -158,9 +163,16 @@ namespace CarCards.ViewModels
                 CaminhoFoto = CaminhoFoto
             };
 
-            _carCardsData.Add(card);
+            try
+            {
+                _carCardsData.Add(card);
 
-            App.Current.MainPage.DisplayAlert("Gravar Dados", "Funcionou", "Ok");
+                _pageDialogService.DisplayAlertAsync("Salvar Card", "Card salvo com sucesso!", "Ok");
+            }
+            catch (System.Exception)
+            {
+                _pageDialogService.DisplayAlertAsync("Salvar Card", "Erro ao salvar Card!", "Ok");
+            }
 
             _navigationService.NavigateAsync("MainPage");
         }
