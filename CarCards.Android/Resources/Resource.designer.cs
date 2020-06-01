@@ -10725,7 +10725,7 @@ namespace CarCards.Droid
 			public const int velocidade = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int Volkswagen = 2131165315;
+			public const int Volks = 2131165315;
 			
 			static Drawable()
 			{

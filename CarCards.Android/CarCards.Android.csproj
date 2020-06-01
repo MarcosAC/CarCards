@@ -155,7 +155,7 @@
     <AndroidResource Include="Resources\drawable\Fiat.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Volkswagen.png" />
+    <AndroidResource Include="Resources\drawable\Volks.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Ford.png" />
