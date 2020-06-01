@@ -134,6 +134,8 @@ namespace CarCards.ViewModels
                 if (file == null)
                     return;
 
+                CaminhoFoto = file.Path;
+
                 CarregarFoto(file);
             }
         }
