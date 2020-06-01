@@ -10,20 +10,22 @@ namespace CarCards.Data
 {
     public class DataCarCards
     {
-        //LiteDatabase _dataBase;
+        protected LiteDatabase dataBase;
 
         LiteCollection<Card> cards;      
 
         public DataCarCards()
         {
-            var dataBase = new LiteDatabase(DependencyService.Get<IPathDataBase>().FilePath("CarCardsDb.db"));
+            dataBase = new LiteDatabase(DependencyService.Get<IPathDataBase>().FilePath("CarCardsDb.db"));
 
-            cards = (LiteCollection<Card>)dataBase.GetCollection<Card>();
+            //cards = (LiteCollection<Card>)dataBase.GetCollection<Card>();
         }
 
         public void Add(Card card)
         {
-            card.Id = Guid.NewGuid().ToString();
+            //card.Id = Guid.NewGuid().ToString();
+
+            var cards = (LiteCollection<Card>)dataBase.GetCollection<Card>();
 
             cards.Insert(card);            
         }  

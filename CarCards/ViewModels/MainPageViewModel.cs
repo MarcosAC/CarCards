@@ -3,7 +3,6 @@ using CarCards.Models;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
@@ -23,17 +22,12 @@ namespace CarCards.ViewModels
 
             dataCarCards = new DataCarCards();
 
-            Cards = new ObservableCollection<Card>(LoadCards());
+            Cards = new ObservableCollection<Card>(dataCarCards.GetAll());
         }
         
         private DelegateCommand _goToAddCardPage;
         public DelegateCommand GoToAddCardPage => _goToAddCardPage ?? (_goToAddCardPage = new DelegateCommand(async () => await ExecuteIrGoToAddCardPage()));
 
-        private async Task ExecuteIrGoToAddCardPage() => await _navigationService.NavigateAsync("AddCardPage");
-
-        private List<Card> LoadCards()
-        {
-            return dataCarCards.GetAll();
-        }
+        private async Task ExecuteIrGoToAddCardPage() => await _navigationService.NavigateAsync("AddCardPage");        
     }
 }
