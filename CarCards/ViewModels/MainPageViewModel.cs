@@ -16,11 +16,11 @@ namespace CarCards.ViewModels
 
         public ObservableCollection<Card> Cards { get; set; }
 
-        public MainPageViewModel(INavigationService navigationService)
+        public MainPageViewModel(INavigationService navigationService, CarCardsData carCardsData)
         {
             _navigationService = navigationService;
 
-            _carCardsData = new CarCardsData(); 
+            _carCardsData = carCardsData; 
             
             Cards = new ObservableCollection<Card>(_carCardsData.GetAll());
         }

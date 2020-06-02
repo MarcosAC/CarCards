@@ -19,13 +19,13 @@ namespace CarCards.ViewModels
 
         private readonly CarCardsData _carCardsData;
 
-        public AddCardPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
+        public AddCardPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, CarCardsData carCardsData)
         {
             _navigationService = navigationService;
 
             _pageDialogService = pageDialogService;
 
-            _carCardsData = new CarCardsData();
+            _carCardsData = carCardsData;
         }
 
         private bool _imageButtonIsVisible = true;
