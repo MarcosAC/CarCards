@@ -32,5 +32,7 @@ namespace CarCards.ViewModels
         private async Task ExecuteGoAddCardPageCommand() => await _navigationService.NavigateAsync("AddCardPage");
 
         public void OnNavigatedTo(INavigationParameters parameters) => Cards = new ObservableCollection<Card>(_carCardsData.GetAll());
+
+        public void OnNavigatedFrom(INavigationParameters parameters) { }
     }
 }
