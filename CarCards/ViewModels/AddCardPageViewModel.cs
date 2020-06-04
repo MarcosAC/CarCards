@@ -28,6 +28,13 @@ namespace CarCards.ViewModels
             _carCardsData = carCardsData;
         }
 
+        //private bool _isBusy;
+        //public bool IsBusy
+        //{
+        //    get => _isBusy;
+        //    set => SetProperty(ref _isBusy, value);
+        //}
+
         private bool _imageButtonIsVisible = true;
         public bool ImageButtonIsVisible
         {

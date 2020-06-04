@@ -25,6 +25,8 @@
                              IsVisible="{Binding ImageButtonIsVisible}"
                              Command="{Binding TakePhotoCommand}" />
 
+                <!--<ActivityIndicator IsVisible="{Binding IsBusy}"/>-->
+
                 <Image Source="{Binding Foto}" Style="{StaticResource styleImage}"/>
             </StackLayout>
 
