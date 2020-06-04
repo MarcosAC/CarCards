@@ -1,4 +1,5 @@
 ﻿using CarCards.Data;
+using CarCards.Helpers;
 using CarCards.Models;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
@@ -19,13 +20,20 @@ namespace CarCards.ViewModels
 
         private readonly CarCardsData _carCardsData;
 
-        public AddCardPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, CarCardsData carCardsData)
+        private readonly FireBaseHelper _firebase;
+
+        public AddCardPageViewModel(INavigationService navigationService, 
+                                    IPageDialogService pageDialogService, 
+                                    CarCardsData carCardsData,
+                                    FireBaseHelper firebase)
         {
             _navigationService = navigationService;
 
             _pageDialogService = pageDialogService;
 
             _carCardsData = carCardsData;
+
+            _firebase = firebase;
         }
 
         //private bool _isBusy;
@@ -173,6 +181,10 @@ namespace CarCards.ViewModels
             try
             {
                 _carCardsData.Add(card);
+
+                //_pageDialogService.DisplayAlertAsync("Salvar Card", "Card salvo com sucesso!", "Ok");
+
+                _firebase.AddCard(card).GetAwaiter();
 
                 _pageDialogService.DisplayAlertAsync("Salvar Card", "Card salvo com sucesso!", "Ok");
             }
