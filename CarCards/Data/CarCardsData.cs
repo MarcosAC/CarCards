@@ -1,6 +1,6 @@
 ﻿using CarCards.Models;
 using Realms;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace CarCards.Data
@@ -21,9 +21,16 @@ namespace CarCards.Data
             CarCardsDb.Write(() => card = CarCardsDb.Add(card));
         }
 
-        public List<Card> GetAll()
+        public ObservableCollection<Card> GetAll()
         {
-            return CarCardsDb.All<Card>().ToList();
+            var listCards = CarCardsDb.All<Card>().ToList();
+
+            var cards = new ObservableCollection<Card>();
+
+            foreach (var item in listCards)
+                cards.Add(item);
+
+            return cards;
         }
     }
 }

@@ -20,11 +20,14 @@ namespace CarCards.ViewModels
 
         private readonly CarCardsData _carCardsData;
 
-        private readonly FireBaseHelper _firebase;
+        private readonly WiFiConection _wiFiConection;
+
+        private readonly FireBaseHelper _firebase;          
 
         public AddCardPageViewModel(INavigationService navigationService, 
                                     IPageDialogService pageDialogService, 
                                     CarCardsData carCardsData,
+                                    WiFiConection wiFiConection,
                                     FireBaseHelper firebase)
         {
             _navigationService = navigationService;
@@ -33,15 +36,10 @@ namespace CarCards.ViewModels
 
             _carCardsData = carCardsData;
 
+            _wiFiConection = wiFiConection;
+
             _firebase = firebase;
         }
-
-        //private bool _isBusy;
-        //public bool IsBusy
-        //{
-        //    get => _isBusy;
-        //    set => SetProperty(ref _isBusy, value);
-        //}
 
         private bool _imageButtonIsVisible = true;
         public bool ImageButtonIsVisible
@@ -180,11 +178,16 @@ namespace CarCards.ViewModels
 
             try
             {
-                _carCardsData.Add(card);
+                if (_wiFiConection.IsConnected())
+                {
+                    _carCardsData.Add(card);
 
-                //_pageDialogService.DisplayAlertAsync("Salvar Card", "Card salvo com sucesso!", "Ok");
-
-                _firebase.AddCard(card).GetAwaiter();
+                    _firebase.AddCard(card).GetAwaiter();
+                }
+                else
+                {
+                    _carCardsData.Add(card);
+                }               
 
                 _pageDialogService.DisplayAlertAsync("Salvar Card", "Card salvo com sucesso!", "Ok");
             }

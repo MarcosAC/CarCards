@@ -1,13 +1,8 @@
 ﻿using CarCards.Models;
 using Firebase.Database;
 using Firebase.Database.Query;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
 namespace CarCards.Helpers
 {
@@ -23,17 +18,27 @@ namespace CarCards.Helpers
         }
 
         public async Task AddCard(Card card) => await firebase.Child("Cards").PostAsync<Card>(card);
+
+        public ObservableCollection<Card> GetAll()
+        {
+            return firebase
+                   .Child("Cards")
+                   .AsObservable<Card>()
+                   .AsObservableCollection();
+        }
+
+        //public async Task AddCard(Card card)
         //{
         //    await firebase
         //        .Child("Cards")
         //        .PostAsync<Card>(card);
         //}
 
-        //public async Task<List<Card>> GetAll()
+        //public async Task<List<Card>> ListCards()
         //{
         //    return (await firebase
         //        .Child("Cards")
-        //        .OnceAsync<Card>()).Select(item => new Card 
+        //        .OnceAsync<Card>()).Select(item => new Card
         //        {
         //            Marca = item.Object.Marca,
         //            NomeCarro = item.Object.NomeCarro,
@@ -46,13 +51,5 @@ namespace CarCards.Helpers
         //            CaminhoFoto = item.Object.CaminhoFoto
         //        }).ToList();
         //}
-
-        public ObservableCollection<Card> GetAll()
-        {
-            return firebase
-                .Child("Cards")
-                .AsObservable<Card>()
-                .AsObservableCollection();
-        }
     }
 }

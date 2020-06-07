@@ -15,23 +15,26 @@ namespace CarCards.ViewModels
 
         private readonly CarCardsData _carCardsData;
 
+        private readonly WiFiConection _wiFiConection;
+
         private readonly FireBaseHelper _firebase;
 
         public ObservableCollection<Card> Cards { get; set; }
 
         public MainPageViewModel(INavigationService navigationService, 
                                  CarCardsData carCardsData,
+                                 WiFiConection wiFiConection,
                                  FireBaseHelper firebase)
         {
             _navigationService = navigationService;
 
             _carCardsData = carCardsData;
 
+            _wiFiConection = wiFiConection;
+
             _firebase = firebase;
 
-            //Cards = new ObservableCollection<Card>(_carCardsData.GetAll());
-
-            Cards = _firebase.GetAll();
+            Cards = LoadCards();
         }
         
         private DelegateCommand _goAddCardPageCommand;
@@ -40,10 +43,16 @@ namespace CarCards.ViewModels
 
         private async Task ExecuteGoAddCardPageCommand() => await _navigationService.NavigateAsync("AddCardPage");
 
-        //public void OnNavigatedTo(INavigationParameters parameters) => Cards = new ObservableCollection<Card>(_carCardsData.GetAll());
-
-        public void OnNavigatedTo(INavigationParameters parameters) => Cards = new ObservableCollection<Card>(_firebase.GetAll());
+        public void OnNavigatedTo(INavigationParameters parameters) => Cards = new ObservableCollection<Card>(LoadCards());
 
         public void OnNavigatedFrom(INavigationParameters parameters) { }
+
+        public ObservableCollection<Card> LoadCards()
+        {
+            if (_wiFiConection.IsConnected())
+                return _firebase.GetAll();
+
+            return _carCardsData.GetAll();
+        }
     }
 }
