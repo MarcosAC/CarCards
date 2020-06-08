@@ -2,7 +2,7 @@
 
 namespace CarCards.Helpers
 {
-    public class WiFiConection
+    public class WiFiConnection
     {
         public bool IsConnected()
         {

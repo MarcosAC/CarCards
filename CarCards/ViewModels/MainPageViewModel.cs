@@ -15,24 +15,21 @@ namespace CarCards.ViewModels
 
         private readonly CarCardsData _carCardsData;
 
-        private readonly WiFiConection _wiFiConection;
+        private readonly WiFiConnection _wiFiConection;
 
         private readonly FireBaseHelper _firebase;
 
         public ObservableCollection<Card> Cards { get; set; }
 
-        public MainPageViewModel(INavigationService navigationService, 
-                                 CarCardsData carCardsData,
-                                 WiFiConection wiFiConection,
-                                 FireBaseHelper firebase)
+        public MainPageViewModel(INavigationService navigationService, CarCardsData carCardsData)
         {
             _navigationService = navigationService;
 
             _carCardsData = carCardsData;
 
-            _wiFiConection = wiFiConection;
+            _wiFiConection = new WiFiConnection();
 
-            _firebase = firebase;
+            _firebase = new FireBaseHelper();
 
             Cards = LoadCards();
         }

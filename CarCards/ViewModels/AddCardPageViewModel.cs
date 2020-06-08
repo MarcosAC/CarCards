@@ -20,25 +20,21 @@ namespace CarCards.ViewModels
 
         private readonly CarCardsData _carCardsData;
 
-        private readonly WiFiConection _wiFiConection;
+        private readonly WiFiConnection _wiFiConection;
 
         private readonly FireBaseHelper _firebase;          
 
-        public AddCardPageViewModel(INavigationService navigationService, 
-                                    IPageDialogService pageDialogService, 
-                                    CarCardsData carCardsData,
-                                    WiFiConection wiFiConection,
-                                    FireBaseHelper firebase)
+        public AddCardPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
         {
             _navigationService = navigationService;
 
             _pageDialogService = pageDialogService;
 
-            _carCardsData = carCardsData;
+            _carCardsData = new CarCardsData();
 
-            _wiFiConection = wiFiConection;
+            _wiFiConection = new WiFiConnection();
 
-            _firebase = firebase;
+            _firebase = new FireBaseHelper();
         }
 
         private bool _imageButtonIsVisible = true;
@@ -140,7 +136,7 @@ namespace CarCards.ViewModels
 
                 CaminhoFoto = file.Path;
 
-                CarregarFoto(file);
+                LoadPhpto(file);
             }
             else
             {
@@ -154,7 +150,7 @@ namespace CarCards.ViewModels
 
                 CaminhoFoto = file.Path;
 
-                CarregarFoto(file);
+                LoadPhpto(file);
             }
         }
 
@@ -205,7 +201,7 @@ namespace CarCards.ViewModels
 
         private async Task ExecuteGoBackMainPageCommand() => await _navigationService.GoBackAsync();
 
-        private void CarregarFoto(MediaFile file)
+        private void LoadPhpto(MediaFile file)
         {
             if (file == null)
                 return;
