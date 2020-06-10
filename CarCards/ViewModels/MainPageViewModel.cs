@@ -43,7 +43,7 @@ namespace CarCards.ViewModels
 
         private async Task ExecuteGoAddCardPageCommand() => await _navigationService.NavigateAsync("AddCardPage");
 
-        public void OnNavigatedTo(INavigationParameters parameters) => Cards = new ObservableCollection<Card>(LoadCards());        
+        public void OnNavigatedTo(INavigationParameters parameters) => Cards = new ObservableCollection<Card>(LoadCards());
 
         public void OnNavigatedFrom(INavigationParameters parameters) { }
 
@@ -55,20 +55,10 @@ namespace CarCards.ViewModels
             return carCardsData.GetAll();
         }
 
-        public async Task<List<Card>> LoadCardsAsync()
-        {
-            if (wiFiConection.IsConnected())
-            {
-                return await firebase.ListCardsAsync();
-            }  
-
-            return null;
-        }
-
         private void SyncLocalCardsList()
         {
             var localCardList = carCardsData.GetAll();
-            var firebaseCardList = firebase.GetAll();
+            //var firebaseCardList = firebase.GetAll();
 
             if (localCardList.Count > firebaseCardList.Count)
                 firebase.UpdateCardsList(localCardList).GetAwaiter();

@@ -23,7 +23,7 @@ namespace CarCards.Helpers
 
         public ObservableCollection<Card> GetAll()
         {
-            var dados =  firebase
+            var dados = firebase
                    .Child("Cards")
                    .AsObservable<Card>()
                    .AsObservableCollection();
@@ -38,24 +38,24 @@ namespace CarCards.Helpers
                 .PutAsync(cards);
         }
 
-        //public async Task<List<Card>> ListCardsAsync()
-        //{
-        //    var lista = (await firebase
-        //        .Child("Cards")
-        //        .OnceAsync<Card>()).Select(item => new Card
-        //        {
-        //            Marca = item.Object.Marca,
-        //            NomeCarro = item.Object.NomeCarro,
-        //            Ano = item.Object.Ano,
-        //            Velocidade = item.Object.Velocidade,
-        //            Aceleracao = item.Object.Aceleracao,
-        //            Potencia = item.Object.Potencia,
-        //            Cilindradas = item.Object.Cilindradas,
-        //            Motor = item.Object.Motor,
-        //            CaminhoFoto = item.Object.CaminhoFoto
-        //        }).ToList();
+        public async Task<List<Card>> ListCardsAsync()
+        {
+            var lista = (await firebase
+                .Child("Cards")
+                .OnceAsync<Card>()).Select(item => new Card
+                {
+                    Marca = item.Object.Marca,
+                    NomeCarro = item.Object.NomeCarro,
+                    Ano = item.Object.Ano,
+                    Velocidade = item.Object.Velocidade,
+                    Aceleracao = item.Object.Aceleracao,
+                    Potencia = item.Object.Potencia,
+                    Cilindradas = item.Object.Cilindradas,
+                    Motor = item.Object.Motor,
+                    CaminhoFoto = item.Object.CaminhoFoto
+                }).ToList();
 
-        //    return lista;
-        //}
+            return lista;
+        }
     }
 }
