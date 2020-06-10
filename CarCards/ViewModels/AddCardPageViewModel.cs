@@ -18,11 +18,11 @@ namespace CarCards.ViewModels
 
         private readonly IPageDialogService _pageDialogService;
 
-        private readonly CarCardsData _carCardsData;
+        private readonly CarCardsData carCardsData;
 
-        private readonly WiFiConnection _wiFiConection;
+        private readonly WiFiConnection wiFiConection;
 
-        private readonly FireBaseHelper _firebase;          
+        private readonly FireBaseHelper firebase;          
 
         public AddCardPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
         {
@@ -30,11 +30,11 @@ namespace CarCards.ViewModels
 
             _pageDialogService = pageDialogService;
 
-            _carCardsData = new CarCardsData();
+            carCardsData = new CarCardsData();
 
-            _wiFiConection = new WiFiConnection();
+            wiFiConection = new WiFiConnection();
 
-            _firebase = new FireBaseHelper();
+            firebase = new FireBaseHelper();
         }
 
         private bool _imageButtonIsVisible = true;
@@ -136,7 +136,7 @@ namespace CarCards.ViewModels
 
                 CaminhoFoto = file.Path;
 
-                LoadPhpto(file);
+                LoadPhoto(file);
             }
             else
             {
@@ -150,14 +150,14 @@ namespace CarCards.ViewModels
 
                 CaminhoFoto = file.Path;
 
-                LoadPhpto(file);
+                LoadPhoto(file);
             }
         }
 
         private DelegateCommand _addCardCommand;
-        public DelegateCommand AddCardCommand => _addCardCommand ?? (_addCardCommand = new DelegateCommand(() => ExecuteAddCardCommand()));
+        public DelegateCommand AddCardCommand => _addCardCommand ?? (_addCardCommand = new DelegateCommand(async () => await ExecuteAddCardCommand()));
 
-        private void ExecuteAddCardCommand()
+        private async Task ExecuteAddCardCommand()
         {
             var card = new Card
             {
@@ -174,25 +174,25 @@ namespace CarCards.ViewModels
 
             try
             {
-                if (_wiFiConection.IsConnected())
+                if (wiFiConection.IsConnected())
                 {
-                    _carCardsData.Add(card);
+                    carCardsData.Add(card);
 
-                    _firebase.AddCard(card).GetAwaiter();
+                    await firebase.AddCard(card);
                 }
                 else
                 {
-                    _carCardsData.Add(card);
+                    carCardsData.Add(card);
                 }               
 
-                _pageDialogService.DisplayAlertAsync("Salvar Card", "Card salvo com sucesso!", "Ok");
+                await _pageDialogService.DisplayAlertAsync("Salvar Card", "Card salvo com sucesso!", "Ok");
             }
             catch (System.Exception)
             {
-                _pageDialogService.DisplayAlertAsync("Salvar Card", "Erro ao salvar Card!", "Ok");
+               await _pageDialogService.DisplayAlertAsync("Salvar Card", "Erro ao salvar Card!", "Ok");
             }
 
-            _navigationService.NavigateAsync("MainPage");
+            await _navigationService.NavigateAsync("MainPage");
         }
 
         private DelegateCommand _goBackMainPageCommand;
@@ -201,7 +201,7 @@ namespace CarCards.ViewModels
 
         private async Task ExecuteGoBackMainPageCommand() => await _navigationService.GoBackAsync();
 
-        private void LoadPhpto(MediaFile file)
+        private void LoadPhoto(MediaFile file)
         {
             if (file == null)
                 return;

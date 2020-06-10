@@ -10,33 +10,31 @@ using System.Threading.Tasks;
 
 namespace CarCards.ViewModels
 {
-    public class MainPageViewModel : BindableBase/*, INavigatedAware*/
+    public class MainPageViewModel : BindableBase, INavigatedAware
     {
         private readonly INavigationService _navigationService;
 
-        private readonly CarCardsData _carCardsData;
+        private readonly CarCardsData carCardsData;
 
-        private readonly WiFiConnection _wiFiConection;
+        private readonly WiFiConnection wiFiConection;
 
-        private readonly FireBaseHelper _firebase;
+        private readonly FireBaseHelper firebase;
 
-        //public ObservableCollection<Card> Cards { get; set; }
-        public List<Card> Cards { get; set; }
+        public ObservableCollection<Card> Cards { get; set; }
 
-
-        public MainPageViewModel(INavigationService navigationService, CarCardsData carCardsData)
+        public MainPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
 
-            _carCardsData = carCardsData;
+            carCardsData = new CarCardsData();
 
-            _wiFiConection = new WiFiConnection();
+            wiFiConection = new WiFiConnection();
 
-            _firebase = new FireBaseHelper();
+            firebase = new FireBaseHelper();
 
-            //SyncLocalCardsList();
+            SyncLocalCardsList();
 
-            Cards = LoadCardsAsync();
+            Cards = LoadCards();
         }
         
         private DelegateCommand _goAddCardPageCommand;
@@ -45,46 +43,35 @@ namespace CarCards.ViewModels
 
         private async Task ExecuteGoAddCardPageCommand() => await _navigationService.NavigateAsync("AddCardPage");
 
-        //public void OnNavigatedTo(INavigationParameters parameters) => Cards = new ObservableCollection<Card>(LoadCards());
-
-        //public void OnNavigatedTo(INavigationParameters parameters) => Cards = new List<Card>((IEnumerable<Card>)LoadCards());
+        public void OnNavigatedTo(INavigationParameters parameters) => Cards = new ObservableCollection<Card>(LoadCards());        
 
         public void OnNavigatedFrom(INavigationParameters parameters) { }
 
-        //public ObservableCollection<Card> LoadCards()
-        //{
-            //if (_wiFiConection.IsConnected())
-                //return _firebase.GetAll();
-
-            //return _carCardsData.GetAll();
-        //}
-
-        public List<Card> LoadCardsAsync()
+        public ObservableCollection<Card> LoadCards()
         {
-            var dados = new List<Card>();
+            if (wiFiConection.IsConnected())
+                return firebase.GetAll();
 
-            if (_wiFiConection.IsConnected())
+            return carCardsData.GetAll();
+        }
+
+        public async Task<List<Card>> LoadCardsAsync()
+        {
+            if (wiFiConection.IsConnected())
             {
-                var lista = _firebase.ListCardsAsync().GetAwaiter();
+                return await firebase.ListCardsAsync();
+            }  
 
-                foreach (var item in lista.GetResult())
-                {
-                    dados.Add(item);
-                }
-            }               
-
-            return dados;
-
-            //return _carCardsData.GetAll();
+            return null;
         }
 
         private void SyncLocalCardsList()
         {
-            var localCardList = _carCardsData.GetAll();
-            var firebaseCardList = _firebase.GetAll();
+            var localCardList = carCardsData.GetAll();
+            var firebaseCardList = firebase.GetAll();
 
             if (localCardList.Count > firebaseCardList.Count)
-                _firebase.UpdateCardsList(localCardList).GetAwaiter();
+                firebase.UpdateCardsList(localCardList).GetAwaiter();
         }
     }
 }

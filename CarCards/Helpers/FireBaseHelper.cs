@@ -38,18 +38,24 @@ namespace CarCards.Helpers
                 .PutAsync(cards);
         }
 
-        //public async Task AddCard(Card card)
+        //public async Task<List<Card>> ListCardsAsync()
         //{
-        //    await firebase
+        //    var lista = (await firebase
         //        .Child("Cards")
-        //        .PostAsync<Card>(card);
-        //}
+        //        .OnceAsync<Card>()).Select(item => new Card
+        //        {
+        //            Marca = item.Object.Marca,
+        //            NomeCarro = item.Object.NomeCarro,
+        //            Ano = item.Object.Ano,
+        //            Velocidade = item.Object.Velocidade,
+        //            Aceleracao = item.Object.Aceleracao,
+        //            Potencia = item.Object.Potencia,
+        //            Cilindradas = item.Object.Cilindradas,
+        //            Motor = item.Object.Motor,
+        //            CaminhoFoto = item.Object.CaminhoFoto
+        //        }).ToList();
 
-        public async Task<List<Card>> ListCardsAsync()
-        {
-            return ((List<Card>)await firebase
-                .Child("Cards")
-                .OnceAsync<Card>());
-        }
+        //    return lista;
+        //}
     }
 }
