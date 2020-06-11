@@ -8,7 +8,7 @@ namespace CarCards.Helpers
 {
     public class FireBaseHelper
     {
-        private readonly FirebaseClient firebase = new FirebaseClient("https://carcards-d6bc8.firebaseio.com/");
+        private readonly FirebaseClient firebase = new FirebaseClient("https://carcards-xxxx.firebaseio.com/");
 
         public ObservableCollection<Card> Cards { get; set; }
 
