@@ -4,7 +4,6 @@ using CarCards.Models;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
@@ -14,7 +13,7 @@ namespace CarCards.ViewModels
     {
         private readonly INavigationService _navigationService;
 
-        private readonly CarCardsData carCardsData;
+        private readonly DbLocal carCardsData;
 
         private readonly WiFiConnection wiFiConection;
 
@@ -26,13 +25,11 @@ namespace CarCards.ViewModels
         {
             _navigationService = navigationService;
 
-            carCardsData = new CarCardsData();
+            carCardsData = new DbLocal();
 
             wiFiConection = new WiFiConnection();
 
             firebase = new FireBaseHelper();
-
-            SyncLocalCardsList();
 
             Cards = LoadCards();
         }
@@ -53,15 +50,6 @@ namespace CarCards.ViewModels
                 return firebase.GetAll();
 
             return carCardsData.GetAll();
-        }
-
-        private void SyncLocalCardsList()
-        {
-            var localCardList = carCardsData.GetAll();
-            //var firebaseCardList = firebase.GetAll();
-
-            if (localCardList.Count > firebaseCardList.Count)
-                firebase.UpdateCardsList(localCardList).GetAwaiter();
         }
     }
 }

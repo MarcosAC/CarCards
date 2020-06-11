@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace CarCards.Data
 {
-    public class CarCardsData
+    public class DbLocal
     {
         protected Realm CarCardsDb;
 
-        public CarCardsData()
+        public DbLocal()
         {
             CarCardsDb = Realm.GetInstance();
         }

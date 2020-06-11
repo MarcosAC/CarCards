@@ -35,20 +35,6 @@ namespace CarCards
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<AddCardPage, AddCardPageViewModel>();
-            //containerRegistry.RegisterForNavigation<ViewB, ViewBViewModel>();
-            //containerRegistry.RegisterForNavigation<ViewC, ViewCViewModel>();
         }
     }
-
-    //protected override void OnStart()
-    //{
-    //}
-
-    //protected override void OnSleep()
-    //{
-    //}
-
-    //protected override void OnResume()
-    //{
-    //}
 }

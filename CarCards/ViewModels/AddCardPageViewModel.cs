@@ -18,7 +18,7 @@ namespace CarCards.ViewModels
 
         private readonly IPageDialogService _pageDialogService;
 
-        private readonly CarCardsData carCardsData;
+        private readonly DbLocal dbLocal;
 
         private readonly WiFiConnection wiFiConection;
 
@@ -30,7 +30,7 @@ namespace CarCards.ViewModels
 
             _pageDialogService = pageDialogService;
 
-            carCardsData = new CarCardsData();
+            dbLocal = new DbLocal();
 
             wiFiConection = new WiFiConnection();
 
@@ -175,15 +175,9 @@ namespace CarCards.ViewModels
             try
             {
                 if (wiFiConection.IsConnected())
-                {
-                    carCardsData.Add(card);
-
                     await firebase.AddCard(card);
-                }
-                else
-                {
-                    carCardsData.Add(card);
-                }               
+
+                dbLocal.Add(card);
 
                 await _pageDialogService.DisplayAlertAsync("Salvar Card", "Card salvo com sucesso!", "Ok");
             }
